@@ -1,16 +1,15 @@
 ---
-title: Difference between random and urandom
+title: Comparing Security and Performance between /dev/random and /dev/urandom
 author: nakji
 date: 2023-12-28 15:56:00 +0800
-categories: [Java, Jvm]
+categories: [Java]
 tags: [java jvm entropy]
 pin: true
 img_path: ''
 ---
 
 > ** 아래 내용은 GPT4 기반으로 정리했습니다. **
-
-&nbsp;
+    
 ## jvm 실행 옵션 중 Djava.security.egd 가 의미하는게 무엇인가
 
 `Djava.security.egd` 옵션은 Java Virtual Machine(JVM)에서 암호화 작업을 위해 사용하는 엔트로피 소스를 지정하는 데 사용됩니다. 
@@ -37,7 +36,7 @@ java -Djava.security.egd=file:/dev/./urandom -jar your-application.jar
 
 애플리케이션의 보안 요구 사항과 성능 요구 사항에 따라 적절한 엔트로피 소스를 선택하는 것이 중요합니다.    
 
-&nbsp;&nbsp;
+        
 
 ## 보안 측면에서 /dev/random을 사용하면 어떻게 차이가 있는건가
 
