@@ -2,8 +2,8 @@
 title: Comparing Security and Performance between /dev/random and /dev/urandom
 author: nakji
 date: 2023-12-28 15:56:00 +0800
-categories: [Java]
-tags: [java jvm entropy]
+categories: [Java, Jvm]
+tags: [jvm entropy]
 pin: true
 img_path: ''
 ---
