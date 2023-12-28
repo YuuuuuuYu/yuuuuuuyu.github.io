@@ -13,9 +13,6 @@ img_path: ''
 &nbsp;
 
 ### 사용 예:
-```bash
-java -Djava.security.egd=file:/dev/./urandom -jar your-application.jar
-```
 이 명령은 JVM이 `/dev/urandom`을 사용하여 엔트로피를 수집하도록 지시합니다.
 
 ### 왜 중요한가?
