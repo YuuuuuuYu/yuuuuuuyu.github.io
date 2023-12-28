@@ -9,6 +9,5 @@ img_path: ''
 
 ` 3개를 사용하여 코드 블록을 생성하는 것은 오류 발생
 
-```
-// ㅅㄷㄴㅅ
-```
+`java -Djava.security.egd=file:/dev/./urandom -jar your-application.jar`
+
