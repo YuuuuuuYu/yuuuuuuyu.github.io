@@ -13,3 +13,8 @@ img_path: ''
 
 
 `Djava.security.egd` 옵션은
+
+
+```bash
+java -Djava.security.egd=file:/dev/./urandom -jar your-application.jar
+```
