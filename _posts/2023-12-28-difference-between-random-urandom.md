@@ -1,7 +1,7 @@
 ---
-title: Comparing Security and Performance between /dev/random and /dev/urandom
+title: difference between random urandom
 author: nakji
-date: 2023-12-28 15:56:00 +0800
+date: 2023-12-28 16:54:00 +0800
 categories: [Java, Jvm]
 tags: [jvm entropy]
 pin: true
