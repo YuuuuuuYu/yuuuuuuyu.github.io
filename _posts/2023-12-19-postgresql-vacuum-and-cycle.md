@@ -4,7 +4,7 @@ author: nakji
 date: 2023-12-19 17:56:00 +0800
 categories: [DB, Postgresql]
 tags: [postgresql vacuum]
-pin: true
+pin: false
 img_path: ''
 ---
 
