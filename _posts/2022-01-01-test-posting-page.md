@@ -1,10 +1,9 @@
 ---
-title: PostgreSQL Vacuum and Cycle
+title: PostgreSQL2
 author: nakji
-date: 2023-12-28 17:56:00 +0800
+date: 2022-01-01 17:56:00 +0800
 categories: [DB, Postgresql]
 tags: [postgresql vacuum]
-pin: false
 img_path: ''
 ---
 
