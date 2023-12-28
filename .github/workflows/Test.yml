@@ -12,7 +12,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - .github
+      - .github/**
       - .gitignore
       - README.md
       - LICENSE
