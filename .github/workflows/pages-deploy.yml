@@ -1,8 +1,8 @@
 name: "Build and Deploy" 
 on:
   push:
-    branches:
-      - main_ # 자동 실행 방지
+    branches-ignore:
+      - main
     paths-ignore:
       - .gitignore
       - README.md
