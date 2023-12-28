@@ -2,7 +2,7 @@
 title: PostgreSQL2
 author: nakji
 date: 2022-01-01 17:56:00 +0800
-categories: [DB, Postgresql]
+categories: [Java]
 tags: [postgresql vacuum]
 img_path: ''
 ---
