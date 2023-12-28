@@ -1,5 +1,5 @@
 ---
-title: Difference between /dev/random and /dev/urandom
+title: Difference between random and urandom
 author: nakji
 date: 2023-12-28 15:56:00 +0800
 categories: [Java, Jvm]
