@@ -45,6 +45,13 @@ jobs:
           ruby-version: 3.3
           bundler-cache: true
 
+	  - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # 프로젝트에 맞는 Node.js 버전으로 설정
+
+      - name: Install Node.js dependencies
+        run: npm install
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
