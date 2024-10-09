@@ -7,10 +7,10 @@ order: 4
 ## ✏️ Skill
 
 ### Main
-###### ![JAVA/SPRING](https://img.shields.io/badge/Java/Spring-6DB33F) ![SPRINGBOOT](https://img.shields.io/badge/SpringBoot-6DB33F) ![ORACLE](https://img.shields.io/badge/Oracle-F80000)
+###### ![badge](https://img.shields.io/badge/java/spring-6DB33F?style=flat&logo=spring&logoColor=white) ![badge](https://img.shields.io/badge/springboot-6DB33F?style=flat&logo=springboot&logoColor=white) ![badge](https://img.shields.io/badge/oracle-F80000?style=flat&logo=oracle&logoColor=white)
 
 ### Sub
-###### ![JAVASCRIPT](https://img.shields.io/badge/JavaScript-F7DF1E) ![TYPESCRIPT](https://img.shields.io/badge/TypeScript-3178C6) ![POSTGRESQL](https://img.shields.io/badge/PostgreSQL-4169E1)
+###### ![badge](https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=black) ![badge](https://img.shields.io/badge/typescript-3178C6?style=flat&logo=typescript&logoColor=white) ![badge](https://img.shields.io/badge/postgresql-4169E1?style=flat&logo=postgresql&logoColor=white)
 
 ### ETC
-###### ![BOOTSTRAP](https://img.shields.io/badge/Bootstrap-7952B3) ![GRADLE](https://img.shields.io/badge/Gradle-black)
+###### ![badge](https://img.shields.io/badge/bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white) ![badge](https://img.shields.io/badge/gradle-02303A?style=flat&logo=gradle&logoColor=white)
