@@ -18,7 +18,6 @@ img_path: ''
   <image href="https://yuuuuuuyu.github.io/assets/img/posts/dns3.svg" width="1480" height="800" />
 </svg>
 
-
 **- DNS 캐시된 응답**
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 800">
   <image href="https://yuuuuuuyu.github.io/assets/img/posts/dns4.svg" width="1480" height="800" />
@@ -27,7 +26,8 @@ img_path: ''
 ### 1. 브라우저 캐싱
 : 최신 브라우저는 기본적으로 정해진 시간 동안 DNS 레코드를 캐시하도록 설계되어있다. 웹 브라우저와 가까울수록 캐시를 확인하고 IP 주소에 대한 요청을 처리하는 단계가 적어지기 때문이다.   
 예시로 `Chrome`의 경우 아래 주소에서 DNS 캐시의 상태를 볼 수 있다.  
-<a href="chrome://net-internals/#dns" target="_blank">chrome://net-internals/#dns</a>
+> chrome://net-internals/#dns
+
 
 ### 2. OS 수준 캐싱
 : 운영체제마다 DNS 캐싱 방식과 관리하는 방법이 다르지만 공통으로 DNS Resolver로 쿼리가 요청되기 전에 요청을 받는다. `Stub Resolver`라고 불리우며 DNS Resolver의 하위 집합이라고 보면 된다. DNS Resolver와의 차이점은 스스로 재귀를 수행하지 않고 캐시를 공동으로 공유되기 때문에 DNS Resolver에 캐시가 있다면 더 빨리 IP 주소를 확인하여 반환한다.
