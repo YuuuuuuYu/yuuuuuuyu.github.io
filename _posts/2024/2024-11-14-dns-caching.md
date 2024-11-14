@@ -1,5 +1,5 @@
 ---
-title: DNS 심화
+title: DNS 캐싱
 author: nakji
 date: 2024-11-14 20:08:00 +0900
 categories: [Theory, Network]
@@ -14,11 +14,15 @@ img_path: ''
 - DNS 쿼리를 조기에 확인하여 로딩 시간이 향상되고, 대역폭/CPU 소비가 줄어듬
 
 **- DNS 캐시되지 않은 응답**
-![dns1](https://www.cloudflare.com/img/learning/dns/dns-cache-poisoning/dns-uncached-response.svg)
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 800">
+  <image href="https://yuuuuuuyu.github.io/assets/img/posts/dns3.svg" width="1480" height="800" />
+</svg>
 
 
 **- DNS 캐시된 응답**
-![dns2](https://www.cloudflare.com/img/learning/dns/dns-cache-poisoning/dns-cached-response.svg)
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 800">
+  <image href="https://yuuuuuuyu.github.io/assets/img/posts/dns4.svg" width="1480" height="800" />
+</svg>
 
 ### 1. 브라우저 캐싱
 : 최신 브라우저는 기본적으로 정해진 시간 동안 DNS 레코드를 캐시하도록 설계되어있다. 웹 브라우저와 가까울수록 캐시를 확인하고 IP 주소에 대한 요청을 처리하는 단계가 적어지기 때문이다.   
@@ -36,7 +40,34 @@ img_path: ''
 ## DNS 레코드
 : 도메인 이름과 관련된 정보를 저장하고 제공한다. 각 레코드는 특정한 목적과 기능을 가지며, 인터넷 상에서 도메인 이름 해석, 이메일 라우팅, 서비스 위치 지정 등 여러 가지 작업을 지원한다.
 
+![dns-record](https://yuuuuuuyu.github.io/assets/img/posts/dns5.png)
 
+- **A**     
+: 웹사이트 접속 시 도메인 이름을 IP 주소로 해석하여 연결
+
+- **AAAA**  
+: IPv6 네트워크를 사용하는 환경에서 웹사이트 접속
+
+- **CNAME**     
+: 여러 도메인을 동일한 IP 주소로 관리할 때 사용
+
+- **MX**    
+: 이메일 라우팅을 담당하여 이메일이 올바른 서버로 전달되도록 함
+
+- **TXT**   
+: 이메일 보안 강화 및 기타 텍스트 정보 저장
+
+- **NS**    
+: 도메인의 DNS 정보를 관리하는 네임 서버를 지정하여 DNS 조회시 해당 서버로 질의
+
+- **SOA**   
+: DNS 영역 파일의 시작을 알리고, 네임 서버 관리 정보를 포함
+
+- **SRV**   
+: 특정 서비스의 서버 주소와 포트를 지정하여 서비스 연결
+
+- **PTR**   
+: IP 주소 기반의 식별 및 인증에 사용
 
 ## 자료 출처
 [Cloudflare](https://www.cloudflare.com/ko-kr/learning/dns/dns-cache-poisoning/)        
