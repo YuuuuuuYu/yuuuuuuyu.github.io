@@ -36,8 +36,17 @@ img_path: ''
 
 > [DNS 조회 과정](https://yuuuuuuyu.github.io/posts/dns/#dns-%EC%A1%B0%ED%9A%8C-%EA%B3%BC%EC%A0%95)에서 DNS Resolver 앞에 Stub Resolver가 추가됐다고 보면 된다.
 
+### 장점
+- **성능 향상** : 도메인 이름 해석 시간을 단축시켜 웹 페이지 로딩 속도를 개선
+- **네트워크 부하 감소**: DNS 서버로의 반복적인 조회 요청을 줄여 네트워크 트래픽을 감소
+- **가용성 증대**: DNS 서버에 일시적인 장애가 발생해도 캐시된 정보를 통해 도메인 해석이 가능
 
-## DNS 레코드
+### 단점
+- **정보의 최신화**: DNS 레코드가 변경되었을 때, 캐시된 정보가 만료될 때까지 새로운 정보를 반영하지 못함
+- **보안 취약점**: `Cache Poisoning` 공격 등으로 악성 IP 주소가 캐시에 삽입될 수 있음
+- **캐시 관리의 복잡성**: TTL 값 설정이 부적절할 경우, 캐시의 효율성과 최신성 사이에 균형을 맞추기 어려움
+
+## <a href="https://www.cloudflare.com/ko-kr/learning/dns/dns-records/" target="_blank">DNS 레코드</a>
 : 도메인 이름과 관련된 정보를 저장하고 제공한다. 각 레코드는 특정한 목적과 기능을 가지며, 인터넷 상에서 도메인 이름 해석, 이메일 라우팅, 서비스 위치 지정 등 여러 가지 작업을 지원한다.
 
 ![dns-record](https://yuuuuuuyu.github.io/assets/img/posts/dns5.png)
@@ -69,6 +78,35 @@ img_path: ''
 - **PTR**   
 : IP 주소 기반의 식별 및 인증에 사용
 
+### 레코드별 캐싱 전략 예시
+#### 1. 자주 변경을 하는가?
+- **변경이 적은 레코드**  
+: `NS`, `SOA` 레코드 등 변경이 드물게 발생하면 높은 TTL을 설정하여 캐시 효율성을 극대화할 수 있다.
+- **변경이 잦은 레코드**  
+: `A`, `AAAA`, `MX` 등 IP 주소가 자주 변경될 가능성이 있으면 낮은 TTL을 설정하여 변경 사항을 빠르게 반영할 수 있도록 한다.
+
+#### 2. 사용 목적
+- `A`, `AAAA`   
+: 웹사이트 접속 속도를 최적화하기 위해 캐시 효율성을 높이는 것이 중요함
+
+- `MX`  
+: 이메일 서비스의 가용성과 신뢰성을 보장하기 위해, TTL과 우선순위를 신중하게 설정
+
+#### 3. <a href="https://www.varonis.com/blog/dns-ttl#what-is-dns-ttl-used-for" target="_blank">적정 시간</a>
+: 단위는 초(sec)로 표현하며 시스템 환경마다, 레코드마다 전부 다르겠지만 일반적으로 아래와 같이 추정한다고 한다.
+- **300초 = 5분 = Very Short**  
+: 빠른 변경을 위해 낮은 TTL에 초점을 맞춤
+
+- **3600초 = 1시간 = Short**  
+: 위와 동일하게 빠른 변경을 위해 낮은 TTL에 초점을 맞춤
+
+- **86400초 = 1일 = Long**  
+: 일일 캐시 활용에 더 초점을 둔 상태
+
+- **604800초 = 7일 = Very Long**  
+: 흔하지 않지만, 자주 변경되지 않는 게시되거나 신뢰할 수 있는 정보가 포함된 사이트에 사용됨
+
+
 ## 자료 출처
 [Cloudflare](https://www.cloudflare.com/ko-kr/learning/dns/dns-cache-poisoning/)        
 [NsLookup](https://www.nslookup.io/learning/what-is-a-dns-resolver/)        
@@ -76,4 +114,4 @@ ChatGPT
 
 
 ## 각주
-[^1]: Time to Live, 패킷이 라우터에 의해 폐기될 때까지 네트워크 내부에 존재하도록 설정된 시간 또는 "홉"의 양을 나타낸다. [자세한 내용](https://www.cloudflare.com/ko-kr/learning/cdn/glossary/time-to-live-ttl/)
+[^1]: Time to Live, 해당 레코드가 DNS 캐시에 얼마나 오래 저장될 수 있는지를 결정하는 시간으로, TTL 값이 클수록 레코드는 더 오랜 시간 동안 캐시에 남아 있으며, TTL 값이 작을수록 더 자주 캐시가 갱신된다. [자세한 내용](https://www.cloudflare.com/ko-kr/learning/cdn/glossary/time-to-live-ttl/)
