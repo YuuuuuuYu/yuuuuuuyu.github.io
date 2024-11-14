@@ -106,6 +106,41 @@ img_path: ''
 - **604800초 = 7일 = Very Long**  
 : 흔하지 않지만, 자주 변경되지 않는 게시되거나 신뢰할 수 있는 정보가 포함된 사이트에 사용됨
 
+## DNS 보안
+: 캐싱은 여러 이점을 제공하지만 잘못된 정보나 만료된 레코드을 해결하지 못할 때 여러 위협을 받을 수 있다.
+
+### 1. DNS cache poisoning(DNS spoofing)
+: DNS 캐시에 잘못된 정보를 입력하여 DNS 쿼리가 잘못된 응답을 반환하고, 사용자가 잘못된 사이트로 연결되도록 하는 행위. 공격자는 DNS 네임 서버를 가장하여 DNS Resolver에 요청을 보낸 후, 해당 쿼리를 처리할 때 응답을 위조하여 DNS 캐시를 감염시킬 수 있다. 이는 DNS 서버가 UDP를 사용하고 현재 DNS 정보에 대한 확인이 없기 때문이다.
+
+- **DNS 캐시 악성 침입 프로세스**
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 800">
+  <image href="https://www.cloudflare.com/img/learning/dns/dns-cache-poisoning/dns-cache-poisoning-attack.svg" width="1480" height="800" />
+</svg>  
+
+1. `example.com` 도메인에 대한 IP 요청
+2. 권한 있는 네임 서버에 `example.com`에 대한 IP 요청
+3. 권한 있는 네임 서버가 `example.com`의 IP가 `192.0.0.16`라는 것을 반환  
+  3-1. (3이 실행될 때 공격자가) `example.com`의 IP가 `192.0.0.17`라는 것을 반환  
+
+- **악성 침입된 DNS 캐시**
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 800">
+  <image href="https://www.cloudflare.com/img/learning/dns/dns-cache-poisoning/dns-cache-poisoned.svg" width="1480" height="800" />
+</svg>    
+
+> `example.com(192.0.0.16)`을 원했지만 공격자에 의해 example.com를 접근할 때 `192.0.0.17`로 이동하게 된다.
+
+### 2. 어떻게 막아야 할까?
+: 통신을 시작하기 위해 `handshake`를 수행해야 하는 TCP를 사용하는 대신, DNS 요청 및 응답에는 UDP가 사용된다. UDP는 연결이 열려 있거나 받는 사람이 받을 준비가 되었다는 보장이 없기 때문에 위조에 취약하다.  
+하지만 DNS 악성 침입이 쉽지가 않은데 DNS Resolver가 실제로 권한 있는 네임 서버를 쿼리하기 때문에, 공격자가 권한 있는 네임 서버의 실제 응답이 도착하기 전의 몇 밀리초 만에 가짜 응답을 보내야 하기 때문이다. 그리고 다음과 같은 요소를 알고 있거나 추측해야 공격이 가능하다.
+- 아직 캐시되지 않은 상태로 DNS 쿼리가 진행될 때
+- DNS Resolver가 사용 중인 포트
+  - 예전에는 모든 쿼리가 동일한 포트를 사용했지만, 이제는 매번 다른 무작위 포트를 사용함
+- 요청 ID 번호
+- 쿼리를 받는 권한 있는 네임 서버
+
+### 3. <a href="https://www.cloudflare.com/ko-kr/learning/dns/dnssec/how-dnssec-works/" target="_blank">DNSSEC(Domain Name System Security Extensions)</a>
+: 기존의 DNS 레코드에 암호화 서명을 추가하여 A, AAAA, MX, CNAME 등과 같은 일반적인 레코드 유형과 함께 DNS 네임 서버에 저장된다. 관련된 서명을 점검함으로써 요청된 DNS 레코드가 권한 있는 네임 서버에서 왔으며 중간자 공격으로 삽입된 가짜 레코드와 달리 전송 중 경로에서 변경되지 않았음을 확인할 수 있다.  
+TLS/SSL과 흡사하게 공개 키 암호화 방식을 사용하여 데이터를 확인하고 인증한다. 하지만 아직 주류가 아니므로 DNS는 여전히 공격에 취약하다.
 
 ## 자료 출처
 [Cloudflare](https://www.cloudflare.com/ko-kr/learning/dns/dns-cache-poisoning/)        
