@@ -8,8 +8,7 @@ pin: false
 img_path: ''
 ---
 
-## **DNS 캐싱**
-: 사용자가 도메인을 입력했을 때, 우선적으로 해당 도메인의 IP가 캐싱 되어있는지 확인하게 된다. 캐싱 되어있지않다면 해당 IP 주소와 관련된 지정 `TTL`[^1]이 허용하는 기간 동안 응답을 캐시에 저장한다.
+사용자가 도메인을 입력했을 때, 우선적으로 해당 도메인의 IP가 캐싱 되어있는지 확인하게 된다. 캐싱 되어있지않다면 해당 IP 주소와 관련된 지정 <a href="https://www.cloudflare.com/ko-kr/learning/cdn/glossary/time-to-live-ttl" target="_blank">TTL</a>이 허용하는 기간 동안 응답을 캐시에 저장한다.
 
 - DNS 쿼리를 조기에 확인하여 로딩 시간이 향상되고, 대역폭/CPU 소비가 줄어듬
 
@@ -128,10 +127,6 @@ img_path: ''
 [Cloudflare](https://www.cloudflare.com/ko-kr/learning/dns/dns-cache-poisoning/)        
 [NsLookup](https://www.nslookup.io/learning/what-is-a-dns-resolver/)        
 ChatGPT
-
-
-## 각주
-[^1]: Time to Live, 해당 레코드가 DNS 캐시에 얼마나 오래 저장될 수 있는지를 결정하는 시간으로, TTL 값이 클수록 레코드는 더 오랜 시간 동안 캐시에 남아 있으며, TTL 값이 작을수록 더 자주 캐시가 갱신된다. [자세한 내용](https://www.cloudflare.com/ko-kr/learning/cdn/glossary/time-to-live-ttl/)
 
 
 ---
