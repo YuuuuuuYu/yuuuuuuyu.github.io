@@ -11,7 +11,7 @@ img_path: ''
 
 > [스프링 가이드](https://spring.io/guides/gs/securing-web)를 참고하여 스프링 시큐리티의 기본을 공부해보았다.
 
-## WebSecurityConfig
+## **WebSecurityConfig**
 ```
 @Configuration
 @EnableWebSecurity
@@ -58,7 +58,7 @@ public class WebSecurityConfig {
 `userDetailsService`는 사용자명(user), 비밀번호(password), 역할(USER)을 갖는 유저를 하나 생성한다. 이것을 `InMemoryUserDetailsManager`를 통해 in-메모리에 저장하게 된다.
 
 
-### continue parameter?
+### **continue parameter?**
     In Spring Security 5, the default behavior is to query the saved request on every request. This means that in a typical setup, that in order to use the RequestCache the HttpSession is queried on every request.
 
     In Spring Security 6, the default is that RequestCache will only be queried for a cached request if the HTTP parameter continue is defined. This allows Spring Security to avoid unnecessarily reading the HttpSession with the RequestCache.
@@ -75,7 +75,7 @@ public class WebSecurityConfig {
 <a href="https://docs.spring.io/spring-security/reference/5.8/servlet/architecture.html#requestcache" target="_blank">RequestCache</a>
 
 
-## WebMvcTest 코드 작성
+## **WebMvcTest 코드 작성**
 ```
 @WebMvcTest
 @Import(WebSecurityConfig.class)
@@ -99,7 +99,7 @@ WebSecurityConfig 클래스의 보안 설정을 테스트에 포함시킨다.
 `@WithMockUser`     
 가상의 인증 사용자를 설정
 
-### Unauthenticated Page Test
+### **Unauthenticated Page Test**
 ```
 @Nested
 @DisplayName("공개된 엔드포인트 테스트")
@@ -131,7 +131,7 @@ class PublicEndpoints {
 }
 ```
 
-### Authenticated Page Test
+### **Authenticated Page Test**
 
 ```
 @Nested
@@ -157,7 +157,7 @@ class ProtectedEndpoints {
 }
 ```
 
-### Login Test
+### **Login Test**
 
 ```
 @Nested
@@ -196,7 +196,7 @@ class LoginTests {
 }
 ```
 
-### Logout Test
+### **Logout Test**
 
 ```
 @Nested
@@ -222,5 +222,5 @@ class LogoutTests {
 }
 ```
 
-## 저장소
+## **저장소**
 [깃허브](https://github.com/YuuuuuuYu/spring-security-example)
