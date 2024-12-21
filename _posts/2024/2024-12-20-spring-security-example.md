@@ -59,13 +59,13 @@ public class WebSecurityConfig {
 
 
 ### **continue parameter?**
-    In Spring Security 5, the default behavior is to query the saved request on every request. This means that in a typical setup, that in order to use the RequestCache the HttpSession is queried on every request.
+*In Spring Security 5, the default behavior is to query the saved request on every request. This means that in a typical setup, that in order to use the RequestCache the HttpSession is queried on every request.*
 
-    In Spring Security 6, the default is that RequestCache will only be queried for a cached request if the HTTP parameter continue is defined. This allows Spring Security to avoid unnecessarily reading the HttpSession with the RequestCache.
+*In Spring Security 6, the default is that RequestCache will only be queried for a cached request if the HTTP parameter continue is defined. This allows Spring Security to avoid unnecessarily reading the HttpSession with the RequestCache.*
 
-    In Spring Security 5 the default is to use HttpSessionRequestCache which will be queried for a cached request on every request. If you are not overriding the defaults (i.e. using NullRequestCache), then the following configuration can be used to explicitly opt into the Spring Security 6 behavior in Spring Security 5.8:
+*In Spring Security 5 the default is to use HttpSessionRequestCache which will be queried for a cached request on every request. If you are not overriding the defaults (i.e. using NullRequestCache), then the following configuration can be used to explicitly opt into the Spring Security 6 behavior in Spring Security 5.8:*
 
-    RequestCache Only Checks for Saved Requests if continue Parameter Present
+*RequestCache Only Checks for Saved Requests if continue Parameter Present*
 
 인증이 필요한 리소스에 대해 인증 성공 후 다시 요청하려면 인증된 리소스에 대한 요청을 저장할 필요가 있다. 이 때 사용하는 것이 `RequestCache`이다.
 위 내용은 `RequestCache`에 대해 스프링 시큐리티 5 버전과 6 버전에서의 적용하는 차이를 알려준다.     
