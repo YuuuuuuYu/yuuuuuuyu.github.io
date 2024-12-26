@@ -15,10 +15,10 @@ img_path: ''
 ```
 // CSRF 방지를 위한 상태 토큰 생성 코드
 // 상태 토큰은 추후 검증을 위해 세션에 저장되어야 한다.    
-    public  String generateState() {
-        SecureRandom random =  new  SecureRandom();
-        return  new  BigInteger(130, random).toString(32);  
-    }    
+public  String generateState() {
+    SecureRandom random =  new  SecureRandom();
+    return  new  BigInteger(130, random).toString(32);  
+}    
 
 // 상태 토큰으로 사용할 랜덤 문자열 생성  
 String state = generateState();  
@@ -31,7 +31,14 @@ return state;
 >CSRF 공격을 방지하기 위해 애플리케이션과 사용자 간의 상태를 보유하는 고유한 세션 토큰을 만들어야 한다. 이 세션 토큰을 `상태 토큰(state token)` 이라 하며, 상태 토큰의 값은 사용자가 네이버 로그인을 진행하는 동안 유지되어야 하며 고유한 값이어야 한다. 생성한 상태 토큰은 세션이나 별도의 저장 공간에 저장해야 한다.
 
 ## 2. 로그인 인증 요청문 생성
-URL: `https://nid.naver.com/oauth2.0/authorize?client_id={클라이언트 아이디}&response_type=code&redirect_uri={개발자 센터에 등록한 콜백 URL(URL 인코딩)}&state={상태 토큰}`
+URL: 
+```
+https://nid.naver.com/oauth2.0/authorize?     
+client_id={클라이언트 아이디}&      
+response_type=code&     
+redirect_uri={개발자 센터에 등록한 콜백 URL(URL 인코딩)}&       
+state={상태 토큰}
+```
 
 ### 네이버 로그인 및 동의 화면
 ![네이버 로그인](https://developers.naver.com/proxyapi/rawgit/naver/naver-openapi-guide/master/ko/login/web/images/img_naverid03.gif)
@@ -60,7 +67,15 @@ if(!state.euals(storedState)) {
 ```
 
 ## 4. 접근 토큰 요청
-URL: `https://nid.naver.com/oauth2.0/token?client_id={클라이언트 아이디}&client_secret={클라이언트 시크릿}&grant_type=authorization_code&state={상태 토큰}&code={인증 코드}`
+URL:
+```
+https://nid.naver.com/oauth2.0/token?     
+client_id={클라이언트 아이디}&      
+client_secret={클라이언트 시크릿}&          
+grant_type=authorization_code&      
+state={상태 토큰}&
+code={인증 코드}
+```
 
 >상태 토큰에 대한 검증이 성공적으로 끝났다면 응답으로 전달받은 인증 코드를 이용해 최종 인증 값인 접근 토큰을 발급받는다. 인증 코드는 접근 토큰을 발급할 때 1번만 사용하며 이미 사용한 인증 코드는 더 이상 사용할 수 없다.
 
