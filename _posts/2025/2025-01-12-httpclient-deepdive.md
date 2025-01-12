@@ -28,6 +28,7 @@ img_path: ''
     - `BodyHandlers.ofByteArray()`: 바이트 배열 데이터
     - `BodyHandlers.ofFile(Path)`: 파일 데이터
     - `BodyHandlers.ofInputStream()`: `InputStream`으로 데이터 제공
+
 > HttpResponse.BodyHandler 클래스는 BodyHandler를 생성하기 위한 여러 가지 편리한 정적 팩토리 메서드를 제공한다. 이들 중 다수는 응답 바이트가 완전히 수신될 때까지 메모리에 축적되며, 그 후 응답 바이트는 상위 수준의 Java 유형(ofString, ofByteArray 등)으로 변환된다. 
 
 ## **Get**
@@ -85,6 +86,9 @@ public void post(String uri, String data) throws Exception {
 
 ## **실습**
 ### **예제**
+네이버 로그인 호출에 대한 예제이다. 개인 프로젝트에 적용 중인 설정으로 `requestUrl`과 `redirectUrl`은 이미 설정되어있는 값으로 사용했다.        
+실제 결과는 페이지가 리다이렉트하면서 `text/html` 타입을 반환하기 때문에 상태코드만 출력하도록 했다. 
+
 ```
 public static void main(String[] args) {
     HttpClientExample httpClientExample = new HttpClientExample();
