@@ -280,5 +280,5 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
 ## 참고 자료
 [Spring io](https://docs.spring.io/spring-security/reference/servlet/oauth2/login/core.html)    
-[Velog](https://iseunghan.tistory.com/300)
+[Velog](https://iseunghan.tistory.com/300)  
 ChatGPT
