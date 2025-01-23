@@ -1,7 +1,7 @@
 ---
 title: springframework.http.ResponseEntity
 author: nakji
-date: 2025-01-23 15:00:00 +0900
+date: 2025-01-24 11:05:00 +0900
 categories: [Spring, Http]
 tags: [Http, ResponseEntity]
 pin: false
@@ -46,7 +46,7 @@ public Account handle() {
 ```
 
 ### **WebFlux의 Mono, Flux**
-반응형 프로그래밍을 지원하는 WebFlux를 사용하는 경우, Mono나 Flux를 반환 타입으로 사용할 수 있다. 이는 비동기 및 논블로킹 방식으로 HTTP 응답을 처리할 때 유용하다.
+반응형 프로그래밍을 지원하는 `WebFlux`를 사용하는 경우, `Mono`나 `Flux`를 반환 타입으로 사용할 수 있다. 이는 비동기 및 논블로킹 방식으로 HTTP 응답을 처리할 때 유용하다.
 ```
 @GetMapping("/reactive")
 public Mono<ResponseEntity<String>> getReactive() {
@@ -54,8 +54,8 @@ public Mono<ResponseEntity<String>> getReactive() {
 }
 ```
 
-따라서, SpringMVC 환경에서는 `ResponseEntity`를 사용하는 것이 바디는 물론 헤더를 제어하는데에 더 유연하게 조작이 가능하다. 물론 Http 응답을 세밀하게 제어하는 정도가 아니면 `ResponseBody`를 사용하거나 RestController를 사용하는 것이 더 좋을 수 있다.
+따라서, SpringMVC 환경에서는 `ResponseEntity`를 사용하는 것이 바디는 물론 헤더를 제어하는데에 더 유연하게 조작이 가능하다. 물론 HTTP 응답을 세밀하게 제어하는 정도가 아니면 `ResponseBody`를 사용하거나 `RestController를` 사용하는 것이 더 좋을 수 있다.
 
 
-## 자료 출처
+## **자료 출처**
 ChatGPT
