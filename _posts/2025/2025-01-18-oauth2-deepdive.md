@@ -20,10 +20,8 @@ img_path: ''
 
 서드 파티 관련 API를 호출할 때, 응답 값을 Json으로 가져오기 위해 `JsonNode`를 많이 사용했는데 동일하게 적용하려고 보니 소스가 너무 길어진 것 같다.
 
-<details>
-<summary>소스 보기/닫기</summary>
 
-```
+```java
 private final NaverApiService naverApiService;
 private final SnsInfoService snsInfoService;
 private final UserService userService;
@@ -45,7 +43,7 @@ public String getNaverOauth2LoginUrl(HttpServletRequest request) {
 
 public String processNaverLogin(LoginProfile profile, Oauth2AccessToken tokenInfo) {
     SnsInfo checkSnsInfo = snsInfoService.getOrCreateUser(profile, tokenInfo);
-    Optional\\<User\\> user = userService.getUserByUserId(checkSnsInfo.getSnsId());
+    Optional<User> user = userService.getUserByUserId(checkSnsInfo.getSnsId());
     if (user.isPresent()) {
         // Update user info
 
@@ -134,15 +132,13 @@ private Response getGenerateToken(String state, String code, HttpSession session
 
 ```
 
-</details>
-
 ## **Oauth2 적용 후**
 gpt와 일부 블로그를 찾아보면서 내 방식대로 적용해봤다. 우선 로그인은 잘 되고, 초기 세팅만 해두면 그 이후에는 소스를 재활용하거나 조금만 더 추가하는 것으로 해결될 것 같다.
 
 다음에는 페이지마다 역할 부여하는 것과 `jwt`을 이용한 로그인을 추가할 예정이다.
 
 ### **security.yml**
-```
+```yml
 spring:
   security:
     oauth2:
@@ -164,7 +160,7 @@ spring:
 ```
 
 ### **SecurityConfig**
-```
+```java
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -197,7 +193,7 @@ public class SecurityConfig {
 ```
 
 ### **OAuthAttributes**
-```
+```java
 @Builder
 public record OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, User user) {
     public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
@@ -235,7 +231,7 @@ public record OAuthAttributes(Map<String, Object> attributes, String nameAttribu
 ```
 
 ### **OAuth2UserService**
-```
+```java
 @Service
 @RequiredArgsConstructor
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
