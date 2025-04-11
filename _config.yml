@@ -13,10 +13,6 @@ timezone: Asia/Shanghai
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
-
-plugins:
-  - jekyll-sitemap
-  
 title: YuuuuuuYu # the main title
 
 tagline: So that I can understand it when I look back later # it will display as the subtitle
@@ -26,6 +22,8 @@ description: >- # used by seo meta and the atom feed
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://yuuuuuuyu.github.io"
+plugins:
+  - jekyll-sitemap
 
 github:
   username: yuuuuuuyu # change to your GitHub username
