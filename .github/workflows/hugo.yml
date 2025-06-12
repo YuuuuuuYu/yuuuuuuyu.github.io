@@ -26,14 +26,6 @@ concurrency:
 defaults:
   run:
     shell: bash
-
-      
-    steps:
-      - name: Checkout sources
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SUBMODULE_TOKEN }}
-          submodules: true
           
 jobs:
   # Build job
