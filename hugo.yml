@@ -25,30 +25,13 @@ params:
   title: YuuuuuuYu
   description: "So that I can understand it when I look back later"
   keywords: [Blog, Portfolio, PaperMod]
-  author: YuuuuuuYu
+  author: ["YuuuuuuYu", "nakji"]
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
   mainSections: ["posts", "archives", "search"]
   defaultTheme: auto # dark, light
   disableThemeToggle: false
-
-  ShowReadingTime: true
-  ShowShareButtons: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
-  UseHugoToc: true
-  disableSpecial1stPost: false
-  disableScrollToTop: false
-  comments: true
-  hidemeta: false
-  hideSummary: false
-  showtoc: false
-  tocopen: false
-  searchHidden: true
 
   assets:
     # disableHLJS: true # to disable highlight.js
@@ -122,7 +105,7 @@ menu:
       url: /posts/
       weight: 10
     - identifier: archives
-      name: archive
+      name: archives
       url: /archives/
       weight: 20
     - identifier: tags
