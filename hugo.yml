@@ -11,9 +11,14 @@ buildFuture: false
 buildExpired: false
 
 minify:
-  disableXML: true
+  disableXML: false
   minifyOutput: true
 
+sitemap:
+  changefreq: 'weekly'
+  priority: 0.5
+  filename: 'sitemap.xml'
+  
 outputs:
   home:
     - HTML
