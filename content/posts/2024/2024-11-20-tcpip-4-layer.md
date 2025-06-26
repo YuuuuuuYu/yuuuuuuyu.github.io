@@ -22,7 +22,7 @@ UseHugoToc: true
 ## **What? Why?**
 OSI 7 Layer 모델이 이론적 모델로 만들어진 것에 비해 TCP/IP 4 layer 모델은 실제 인터넷 프로토콜을 반영하여 실용적으로 설계되었다.
 
-![tcpipLayer](https://blog.kakaocdn.net/dn/Go5Mi/btrKwcuCMl2/KNImS8Scha5xinTYAyNm11/img.png)  
+![](https://blog.kakaocdn.net/dn/Go5Mi/btrKwcuCMl2/KNImS8Scha5xinTYAyNm11/img.png)  
 
 ## **OSI 모델과의 차이점**
 ### Application
@@ -52,7 +52,7 @@ OSI 모델에서 물리 계층이 빠진 모습인데, 물리적 전송 매체�
 - 데이터의 물리적 전송, 프레이밍(Framing), 오류 검출을 담당
 - Ethernet, Wi-Fi
 
-![tcpipLayerProcess](https://blog.kakaocdn.net/dn/cdqn09/btrKvP0Gc6d/AEP6VGC9fJf8VsaByuUIwk/img.png)
+![](https://blog.kakaocdn.net/dn/cdqn09/btrKvP0Gc6d/AEP6VGC9fJf8VsaByuUIwk/img.png)
 
 
 ## **TCP vs IP**
@@ -71,7 +71,7 @@ OSI 모델에서 물리 계층이 빠진 모습인데, 물리적 전송 매체�
 
 
 ## **동작 원리**
-![tcpipLayerProcess2](https://signal.avg.com/hs-fs/hubfs/Blog_Content/Avg/Signal/AVG%20Signal%20Images/What%20is%20TCPIP%20(Signal)/TCP-IP.png?width=1320&name=TCP-IP.png)
+![](https://signal.avg.com/hs-fs/hubfs/Blog_Content/Avg/Signal/AVG%20Signal%20Images/What%20is%20TCPIP%20(Signal)/TCP-IP.png?width=1320&name=TCP-IP.png)
 
 TCP/IP 모델은 절차에 따라 해당 데이터를 패킷으로 나눈다.    
 이후 한 순서로 계층을 거친 다음 수신 측에서 데이터가 다시 조립되면서 역순으로 이동한다.    

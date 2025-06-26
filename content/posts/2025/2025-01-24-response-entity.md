@@ -30,7 +30,7 @@ UseHugoToc: true
 - 본문 (Body)   
 : 실제로 클라이언트에게 전달될 데이터
 
-```
+```java
 @GetMapping("/example")
 public ResponseEntity<String> getExample() {
     String body = "Hello, World!";
@@ -44,7 +44,7 @@ public ResponseEntity<String> getExample() {
 객체를 직렬화하여 반환하는 어노테이션으로, 이것만 사용할 경우 헤더를 유연하게 설정할 수 없다.   
 `@ResopnseStatus`를 사용하여 헤더를 설정할 수 있지만, 어노테이션을 별도로 추가해야하는 단점이 있다.
 
-```
+```java
 @GetMapping("/accounts/{id}")
 @ResponseStatus(HttpStatus.OK)
 @ResponseBody
@@ -55,7 +55,7 @@ public Account handle() {
 
 ### **WebFlux의 Mono, Flux**
 반응형 프로그래밍을 지원하는 `WebFlux`를 사용하는 경우, `Mono`나 `Flux`를 반환 타입으로 사용할 수 있다. 이는 비동기 및 논블로킹 방식으로 HTTP 응답을 처리할 때 유용하다.
-```
+```java
 @GetMapping("/reactive")
 public Mono<ResponseEntity<String>> getReactive() {
     return Mono.just(ResponseEntity.ok("Hello, Reactive World!"));

@@ -43,7 +43,7 @@ UseHugoToc: true
 ### **동기**
 - `BodyHandler`는 응답 상태 코드와 헤더가 사용 가능해지면 응답 본문 바이트가 수신되기 전에 호출
 
-```
+```java
 public void get(String uri, String param) throws Exception {
     String uriWithParam = uri+"?"+param;
     HttpClient client = HttpClient.newHttpClient();
@@ -61,7 +61,7 @@ public void get(String uri, String param) throws Exception {
 - `CompletableFuture.thenApply(Function)` 메서드를 사용하여 `HttpResponse`를 본문 유형, 상태 코드 등에 매핑할 수 있다.
 - `join()`: 비동기 작업이 끝날 때까지 대기
 
-```
+```java
 public void getAsync(String uri, String param) {
     String uriWithParam = uri+"?"+param;
     HttpClient client = HttpClient.newHttpClient();
@@ -79,7 +79,7 @@ public void getAsync(String uri, String param) {
 ## **Post**
 - `discard BodyHandler`는 관심이 없는 응답 본문을 수신하고 삭제하는 데 사용될 수 있다. 
 
-```
+```java
 public void post(String uri, String data) throws Exception {
     HttpClient client = HttpClient.newBuilder().build();
     HttpRequest request = HttpRequest.newBuilder()
@@ -97,7 +97,7 @@ public void post(String uri, String data) throws Exception {
 네이버 로그인 호출에 대한 예제이다. 개인 프로젝트에 적용 중인 설정으로 `requestUrl`과 `redirectUrl`은 이미 설정되어있는 값으로 사용했다.        
 실제 결과는 페이지가 리다이렉트하면서 `text/html` 타입을 반환하기 때문에 상태코드만 출력하도록 했다. 
 
-```
+```java
 public static void main(String[] args) {
     HttpClientExample httpClientExample = new HttpClientExample();
     String requestUrl = "https://nid.naver.com/oauth2.0/authorize";

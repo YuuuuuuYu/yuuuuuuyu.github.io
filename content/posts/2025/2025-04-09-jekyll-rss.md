@@ -23,7 +23,7 @@ The Atom Syndication Format is an XML language used for web feeds. A web feed (a
 The atom feed, in the 'feed.xml' file uses Liquid to build the XML. The file contains the following code.
 
 ### **Installation**
-Step 1. Download the file <a href="https://raw.githubusercontent.com/jhvanderschee/jekyllcodex/gh-pages/feed.xml" target="_blank">feed.xml</a>  
+Step 1. Download the file [feed.xml](https://raw.githubusercontent.com/jhvanderschee/jekyllcodex/gh-pages/feed.xml)
 
 Step 2. Save the file in the root of your Jekyll project
 

@@ -20,7 +20,7 @@ UseHugoToc: true
 **네이버 로그인하기까지 어떤 과정을 거치는가?**
 
 ## **1. 세션 유지 및 위조 방지용 상태 토큰 생성**
-```
+```java
 // CSRF 방지를 위한 상태 토큰 생성 코드
 // 상태 토큰은 추후 검증을 위해 세션에 저장되어야 한다.    
 public  String generateState() {
@@ -58,7 +58,7 @@ state={상태 토큰}
 >전달받은 `state` 파라미터의 값과 처음에 생성한 상태 토큰이 일치하는지 확인하여 만약 상태 토큰과 일치하지 않다면, 해당 세션은 유효하지 않다고 판단할 수 있다.
 
 ## **3. 상태 토큰 검증**
-```
+```java
 // CSRF 방지를 위한 상태 토큰 검증 검증  
 // 세션 또는 별도의 저장 공간에 저장된 상태 토큰과 콜백으로 전달받은 state 파라미터의 값이 일치해야 함    
 
@@ -88,7 +88,7 @@ code={인증 코드}
 >상태 토큰에 대한 검증이 성공적으로 끝났다면 응답으로 전달받은 인증 코드를 이용해 최종 인증 값인 접근 토큰을 발급받는다. 인증 코드는 접근 토큰을 발급할 때 1번만 사용하며 이미 사용한 인증 코드는 더 이상 사용할 수 없다.
 
 ### 응답문 JSON
-```
+```json
 {
     "access_token": "AAAAQosjWDJieBiQZc3to9YQp6HDLvrmyKC+6+iZ3gq7qrkqf50ljZC+Lgoqrg",
     "refresh_token": "c8ceMEJisO4Se7uGisHoX0f5JEii7JnipglQipkOn5Zp3tyP7dHQoP0zNKHUq2gY",

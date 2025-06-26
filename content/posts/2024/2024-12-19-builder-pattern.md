@@ -25,7 +25,7 @@ UseHugoToc: true
 ### **기존 생성자 방식**
 기존의 생성자 방식은 객체를 생성할 때 필요한 모든 파라미터를 생성자에 전달해야 한다.
 
-```
+```java
 public class User {
     private Long id;
     private String userId;

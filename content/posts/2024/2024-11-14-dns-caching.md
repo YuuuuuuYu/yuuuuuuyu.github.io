@@ -37,7 +37,7 @@ UseHugoToc: true
 
 ![stubResolver](https://www.nslookup.io/img/how-does-dns-resolver-work.3f1ba36a.jpg)
 
-> [DNS 조회 과정](https://yuuuuuuyu.github.io/posts/2024/2024-11-12-dns/#dns-%EC%A1%B0%ED%9A%8C-%EA%B3%BC%EC%A0%95)에서 DNS Resolver 앞에 Stub Resolver가 추가됐다고 보면 된다.
+> [DNS 조회 과정](/posts/2024/2024-11-12-dns/#dns-%EC%A1%B0%ED%9A%8C-%EA%B3%BC%EC%A0%95)에서 DNS Resolver 앞에 Stub Resolver가 추가됐다고 보면 된다.
 
 ### 장점
 - **성능 향상** : 도메인 이름 해석 시간을 단축시켜 웹 페이지 로딩 속도를 개선

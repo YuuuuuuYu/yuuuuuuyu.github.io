@@ -35,7 +35,7 @@ UseHugoToc: true
 - Error인 경우에는 {code, errorMsg}만
 - success인 경우에는 전달할 값(id, name, …)만
 
-```java
+```json
 //200
 {
     id: 1
@@ -87,9 +87,8 @@ void update_member_memberNotFoundException(){}
 void createToken_customException(){}
 ```
 
-<a href="https://google.github.io/styleguide/javaguide.html" target="_blank">구글 자바 컨벤션</a>  
-<a href="https://github.com/woowacourse-teams/2023-team-by-team/wiki/공통-컨벤션-&-개발-진행방식" target="_blank">우테코-팀바팀-컨벤션</a>  
-
+[구글 자바 컨벤션](https://google.github.io/styleguide/javaguide.html)  
+[우테코-팀바팀-컨벤션](https://github.com/woowacourse-teams/2023-team-by-team/wiki/공통-컨벤션-&-개발-진행방식)
 
 ## **CI/CD 워크플로우**
 개인 프로젝트 할 때 직접 빌드하고 배포 서버에 파일을 옮기는 일은 정말 귀찮다. 지금에서 생각해보면 CI/CD를 왜 미리 구현 안했을까 라는 생각이 든다. 뽀또픽에서는 Github Actions를 이용하여 구축을 했다. 같은 팀원의 말로 본인은 Jenkins만 사용하고 Github Actions는 처음 써보는데 이게 더 편한 것 같다고 했다. 나는 아직 Jenkins를 안써봤지만 채용공고를 보면 Jenkins가 좀 더 많이 쓰이는 것 같다. 

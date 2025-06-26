@@ -35,13 +35,13 @@ Java 11에서 표준 라이브러리로 도입되었으며, 이전의 `HttpURLCo
 - `HttpClient`.newHttpClient()    
 > 기본 설정을 사용한 HttpClient 인스턴스를 생성     
         - 요청(GET), 프로토콜(HTTP/2), 리다이렉트(NEVER), SSL(Default)
-```
+```java
 HttpClient client = HttpClient.newHttpClient();
 ```
 
 - `HttpRequest`.newBuilder()  
 > 새로운 HttpRequest 빌더를 생성
-```
+```java
 HttpRequest request = HttpRequest.newBuilder()
         .uri(URI.create("https://foo.com/"))
         .timeout(Duration.ofMinutes(2))
@@ -52,7 +52,7 @@ HttpRequest request = HttpRequest.newBuilder()
 
 - client.send(request, `HttpResponse`.BodyHandlers.ofString())     
 > 동기적으로 HTTP 요청을 보내고, 응답을 문자열로 받음
-```
+```java
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 System.out.println(response.statusCode());
 System.out.println(response.body());  
@@ -60,7 +60,7 @@ System.out.println(response.body());
 
 - client.sendAsync(request, `HttpResponse`.BodyHandlers.ofString())    
 > 비동기적으로 HTTP 요청을 보내고, 응답을 CompletableFuture로 받음
-```
+```java
 client.sendAsync(request, BodyHandlers.ofString())
         .thenApply(HttpResponse::body)
         .thenAccept(System.out::println);
@@ -79,7 +79,7 @@ client.sendAsync(request, BodyHandlers.ofString())
 - 간단한 사용법: 간단한 REST 호출에 적합
 - 제한 사항: 비동기나 반응형 프로그래밍을 지원하지 않으며, 기능이 제한적
 
-```
+```java
 import org.springframework.web.client.RestTemplate;
 
 public class RestTemplateExample {
@@ -96,7 +96,7 @@ public class RestTemplateExample {
 - 유연성: 다양한 HTTP 요청과 응답 처리를 유연하게 지원
 - 모던한 사용법: 현대적인 웹 애플리케이션에 적합
 
-```
+```java
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 

@@ -20,7 +20,7 @@ UseHugoToc: true
 > [스프링 가이드](https://spring.io/guides/gs/securing-web)를 참고하여 스프링 시큐리티의 기본을 공부해보았다.
 
 ## **WebSecurityConfig**
-```
+```java
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
@@ -79,12 +79,12 @@ public class WebSecurityConfig {
 위 내용은 `RequestCache`에 대해 스프링 시큐리티 5 버전과 6 버전에서의 적용하는 차이를 알려준다.     
 스프링 시큐리티 5 버전에서는 `RequestCache`가 적용되는 **모든 요청에 저장**을 하는 반면, 6 버전에서는 `continue` 같은 **명시적인 파라미터가 들어간 경우**에만 동작하도록 제한되어 있다.
 
-<a href="https://docs.spring.io/spring-security/reference/5.8/migration/servlet/session-management.html#requestcache-query-optimization" target="_blank">Spring Security 5.8</a>    
-<a href="https://docs.spring.io/spring-security/reference/5.8/servlet/architecture.html#requestcache" target="_blank">RequestCache</a>
+[Spring Security 5.8](https://docs.spring.io/spring-security/reference/5.8/migration/servlet/session-management.html#requestcache-query-optimization)   
+[RequestCache](https://docs.spring.io/spring-security/reference/5.8/servlet/architecture.html#requestcache)
 
 
 ## **WebMvcTest 코드 작성**
-```
+```java
 @WebMvcTest
 @Import(WebSecurityConfig.class)
 public class WebSecurityConfigTest {
@@ -108,7 +108,7 @@ WebSecurityConfig 클래스의 보안 설정을 테스트에 포함시킨다.
 가상의 인증 사용자를 설정
 
 ### **Unauthenticated Page Test**
-```
+```java
 @Nested
 @DisplayName("공개된 엔드포인트 테스트")
 class PublicEndpoints {
@@ -141,7 +141,7 @@ class PublicEndpoints {
 
 ### **Authenticated Page Test**
 
-```
+```java
 @Nested
 @DisplayName("보호된 엔드포인트 테스트")
 class ProtectedEndpoints {
@@ -167,7 +167,7 @@ class ProtectedEndpoints {
 
 ### **Login Test**
 
-```
+```java
 @Nested
 @DisplayName("로그인 테스트")
 class LoginTests {
@@ -206,7 +206,7 @@ class LoginTests {
 
 ### **Logout Test**
 
-```
+```java
 @Nested
 @DisplayName("로그아웃 테스트")
 class LogoutTests {
