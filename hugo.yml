@@ -25,6 +25,10 @@ outputs:
     - RSS
     - JSON
 
+services:
+  rss:
+    limit: 10
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: YuuuuuuYu
