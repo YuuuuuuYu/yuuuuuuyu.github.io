@@ -1,0 +1,127 @@
+<div class="services-feed">
+    <h3 class="services-title">🚀 운영 중인 서비스</h3>
+    <div class="services-grid">
+        <div class="service-card">
+            <h4 class="service-title">
+                <a href="https://lastmessage.4d4cat.site" target="_blank" rel="noopener">
+                    마지막으로 남길 메시지는?
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </h4>
+            <p class="service-description">지나간 사람이 마지막으로 남긴 메시지는 뭘까?</p>
+        </div>
+        <div class="service-card">
+            <h4 class="service-title">
+                <a href="https://facial-analysis.4d4cat.site" target="_blank" rel="noopener">
+                    AI 기반 성격 유형 & 매력도 분석
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </h4>
+            <p class="service-description">내 사진을 올리면 성향과 매력이 어떤지 보여준다?</p>
+        </div>
+        <div class="service-card">
+            <h4 class="service-title">
+                <a href="https://services.4d4cat.site" target="_blank" rel="noopener">
+                    랜덤 미디어
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </h4>
+            <p class="service-description">저작권 걱정 없는 매체 중 쓸만한 것이 없을까?</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.services-feed {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+}
+
+.services-title {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.service-card {
+    padding: 1rem;
+    border-radius: 6px;
+    background: var(--theme);
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.service-title a {
+    text-decoration: none;
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.service-title a:hover {
+    color: var(--secondary);
+}
+
+.service-title svg {
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.service-title a:hover svg {
+    opacity: 1;
+}
+
+.service-description {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--secondary);
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .services-feed {
+        margin: 1.5rem 0;
+        padding: 1rem;
+    }
+}
+</style>
