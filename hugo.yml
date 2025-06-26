@@ -35,7 +35,6 @@ params:
   description: "So that I can understand it when I look back later"
   keywords: [Blog, Portfolio, PaperMod]
   author: ["YuuuuuuYu", "nakji"]
-  # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
   mainSections: ["posts", "archives", "search"]
@@ -45,7 +44,7 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "<link / abs url>"
+    favicon: "/favicon.svg"
     favicon16x16: "<link / abs url>"
     favicon32x32: "<link / abs url>"
     apple_touch_icon: "<link / abs url>"
