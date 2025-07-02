@@ -411,3 +411,7 @@ img.in-text {
 p img[src*="shields.io"] {
     display: inline-block;
 }
+
+.utterances {
+    max-width: 100% !important;
+}
