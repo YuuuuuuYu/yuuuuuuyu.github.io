@@ -60,7 +60,7 @@ public class WebSecurityConfig {
 ```
 `@EnableWebSecurity`를 설정하여 시큐리티를 활성화시키고 `securityFilterChain`와 `userDetailsService`를 구현했다.
 
-`securityFilterChain`는 어떤 경로를 보안 설정할지 보여준다. 여기서는 '/'와 '/home' 경로는 인증이 필요하지 않고 나머지 경로에 대해서만 인증을 받도록 설정했다. 인증이 필요한 페이지는 사용자가 성공적으로 로그인하면 이전에 요청한 페이지로 리다이렉션된다. 첫 번째에 `RequestCache`가 선언되어있는데 자세한건 다음 섹션을 참고하길 바란다.  
+`securityFilterChain`는 어떤 경로를 보안 설정할지 보여준다. 여기서는 `/`와 `/home` 경로는 인증이 필요하지 않고 나머지 경로에 대해서만 인증을 받도록 설정했다. 인증이 필요한 페이지는 사용자가 성공적으로 로그인하면 이전에 요청한 페이지로 리다이렉션된다. 첫 번째에 `RequestCache`가 선언되어있는데 자세한건 다음 섹션을 참고하길 바란다.  
 여기서는 `RequestCache`를 적용하지 않기 위해 `NullRequestCache`를 사용했다.
 
 `userDetailsService`는 사용자명(user), 비밀번호(password), 역할(USER)을 갖는 유저를 하나 생성한다. 이것을 `InMemoryUserDetailsManager`를 통해 in-메모리에 저장하게 된다.
