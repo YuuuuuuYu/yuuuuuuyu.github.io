@@ -126,7 +126,7 @@ UseHugoToc: true
 ## 자료 출처
 [Cloudflare](https://www.cloudflare.com/ko-kr/learning/dns/dns-cache-poisoning/)        
 [NsLookup](https://www.nslookup.io/learning/what-is-a-dns-resolver/)        
-[varonis](https://www.varonis.com/blog/dns-ttl#what-is-dns-ttl-used-for/)
+[varonis](https://www.varonis.com/blog/dns-ttl#what-is-dns-ttl-used-for/)   
 ChatGPT
 
 
