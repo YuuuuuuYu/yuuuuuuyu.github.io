@@ -15,7 +15,7 @@ minify:
   minifyOutput: true
 
 sitemap:
-  changefreq: 'daily'
+  changefreq: 'weekly'
   priority: 0.7
   filename: 'sitemap.xml'
   
