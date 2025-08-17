@@ -1,7 +1,7 @@
 ---
 title: AES/CBC/PKCS7
 author: nakji
-date: 2022-07-12 14:23:00 +0800
+date: 2022-07-12 14:23:00 +0900
 tags: [Theory, Security, encrypt, aes, cbc, pkcs7]
 showToc: true
 TocOpen: true

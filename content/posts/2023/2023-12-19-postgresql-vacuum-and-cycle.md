@@ -1,7 +1,7 @@
 ---
 title: PostgreSQL Vacuum and Cycle
 author: nakji
-date: 2023-12-19 17:56:00 +0800
+date: 2023-12-19 17:56:00 +0900
 tags: [postgresql vacuum]
 showToc: true
 TocOpen: true

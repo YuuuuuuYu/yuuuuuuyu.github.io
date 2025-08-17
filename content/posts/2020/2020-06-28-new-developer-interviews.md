@@ -1,7 +1,7 @@
 ---
 title: 신입 웹 개발자 면접 일화
 author: nakji
-date: 2020-06-28 18:14:00 +0800
+date: 2020-06-28 18:14:00 +0900
 tags: [Life, Interview, Web, Developer]
 showToc: true
 TocOpen: true

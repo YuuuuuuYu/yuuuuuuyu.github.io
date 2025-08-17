@@ -1,7 +1,7 @@
 ---
 title: Difference between /dev/random and /dev/urandom
 author: nakji
-date: 2023-12-28 17:56:00 +0800
+date: 2023-12-28 17:56:00 +0900
 tags: [linux, random, urandom]
 showToc: true
 TocOpen: true
