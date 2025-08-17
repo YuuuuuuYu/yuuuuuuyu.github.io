@@ -1,7 +1,7 @@
 ---
 title: 네이버 로그인 과정
 author: nakji
-date: 2024-12-24 17:56:00 +0800
+date: 2024-12-24 17:56:00 +0900
 tags: [naver, login, oauth]
 showToc: true
 TocOpen: true

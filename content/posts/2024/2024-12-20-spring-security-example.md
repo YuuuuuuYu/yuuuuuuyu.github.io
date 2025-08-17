@@ -1,7 +1,7 @@
 ---
 title: 스프링 시큐리티 기본
 author: nakji
-date: 2024-12-20 17:50:00 +0800
+date: 2024-12-20 17:50:00 +0900
 tags: [spring, security]
 showToc: true
 TocOpen: true
