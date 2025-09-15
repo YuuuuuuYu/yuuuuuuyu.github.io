@@ -26,9 +26,12 @@ summary: "about"
 
 ### **DevOps**
 ![badge](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonwebservices&logoColor=white)
+![badge](https://img.shields.io/badge/Gabia--3178C6?style=flat&logo=gabia&logoColor=white)
 
 ### **Communication**
-![badge](https://img.shields.io/badge/Groupware-003c83)
+![badge](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)
+![badge](https://img.shields.io/badge/Discord-5865F2?style=flat&logo=discord&logoColor=white)
+![badge](https://img.shields.io/badge/Groupware-0866FF?style=flat&logo=messenger&logoColor=white)
 ![badge](https://img.shields.io/badge/Teams-5255aa)
 
 ### **Once I used**
@@ -37,7 +40,9 @@ summary: "about"
 ![badge](https://img.shields.io/badge/Typescript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![badge](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
 
+![badge](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![badge](https://img.shields.io/badge/Node.js-5FA04E?style=flat&logo=nodedotjs&logoColor=white)
+![badge](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
 ![badge](https://img.shields.io/badge/Hibernate-59666C?style=flat&logo=hibernate&logoColor=white)
 
 ![badge](https://img.shields.io/badge/GCP-4285F4?style=flat&logo=googlecloud&logoColor=white)
