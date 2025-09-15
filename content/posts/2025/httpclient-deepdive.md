@@ -13,6 +13,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 ShowWordCount: true
+ShowCodeCopyButtons: true
 UseHugoToc: true
 ---
 🔔 **BodyPublisher, BodyHandler 역할**   
