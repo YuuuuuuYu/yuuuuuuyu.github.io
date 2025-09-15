@@ -50,7 +50,7 @@ params:
     favicon: "/favicon.svg"
 
   label:
-    text: "Home"
+    text: "4d4cat"
 
   # profile-mode
   profileMode:
