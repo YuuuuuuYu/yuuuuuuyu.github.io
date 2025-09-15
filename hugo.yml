@@ -2,6 +2,8 @@ baseURL: 'https://4d4cat.site'
 title: 'YuuuuuuYu'
 theme: PaperMod
 
+languageCode: "ko-KR"
+
 pagination:
   pagerSize: 10
 
@@ -31,33 +33,24 @@ outputs:
 
 services:
   rss:
-    limit: 10
+    limit: 20
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: YuuuuuuYu
   description: "So that I can understand it when I look back later"
-  keywords: [Blog, Portfolio, PaperMod]
+  keywords: [4d4cat, YuuuuuuYu, Blog, Portfolio, PaperMod]
   author: ["YuuuuuuYu", "nakji"]
-  images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
   mainSections: ["posts", "archives", "search"]
   defaultTheme: auto # dark, light
   disableThemeToggle: false
 
   assets:
-    # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
     favicon: "/favicon.svg"
-    favicon16x16: "<link / abs url>"
-    favicon32x32: "<link / abs url>"
-    apple_touch_icon: "<link / abs url>"
-    safari_pinned_tab: "<link / abs url>"
 
   label:
     text: "Home"
-    icon: /apple-touch-icon.png
-    iconHeight: 35
 
   # profile-mode
   profileMode:
@@ -99,8 +92,6 @@ params:
     Text: "Edit" # edit text
     appendFilePath: true # to append file path to Edit link
 
-  # for search
-  # https://fusejs.io/api/options.html
   fuseOpts:
     isCaseSensitive: false
     shouldSort: true
@@ -133,6 +124,9 @@ menu:
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
+  goldmark:
+    renderer:
+      unsafe: true  # HTML 태그 허용
   highlight:
     noClasses: false
     # anchorLineNos: true
@@ -140,3 +134,10 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+
+privacy:
+  googleAnalytics:
+    anonymizeIP: true
+    disable: false
+    respectDoNotTrack: true
+    useSessionStorage: false
