@@ -15,6 +15,8 @@ ShowPostNavLinks: true
 ShowWordCount: true
 UseHugoToc: true
 ---
+## [이전 포스트](/posts/2025/photopic) 를 읽고 오시는 것을 추천드립니다.
+
 🔔 **이미지 업로드 설계 과정**   
 🔔 **AWS Lambda 필요한가**
 
