@@ -17,8 +17,8 @@ minify:
 enableGitInfo: true
 
 sitemap:
-  changefreq: 'weekly'
-  priority: 0.7
+  changefreq: 'daily'
+  priority: 0.8
   filename: 'sitemap.xml'
   
 googleAnalytics: G-45YW040V4L
