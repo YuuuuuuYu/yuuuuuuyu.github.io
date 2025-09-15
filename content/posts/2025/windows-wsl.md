@@ -14,6 +14,7 @@ ShowBreadCrumbs: true
 ShowPostNavLinks: true
 ShowWordCount: true
 UseHugoToc: true
+aliases: /posts/2025/2025-06-26-windows-wsl/
 ---
 
 🔔 **Windows에서 WSL 설치 시 발생할 수 있는 문제**   
