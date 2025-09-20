@@ -15,10 +15,7 @@ ShowPostNavLinks: true
 ShowWordCount: true
 UseHugoToc: true
 ---
-## [이전 포스트](/posts/2025/photopic) 를 읽고 오시는 것을 추천드립니다.
-
-🔔 **이미지 업로드 설계 과정**   
-🔔 **AWS Lambda 필요한가**
+> **[이전 포스트](/posts/2025/photopic) 를 읽고 오시는 것을 추천드립니다.**
 
 내가 뽀또픽을 진행하면서 맡은 업무 중 이미지 업로드가 있는데, 이 작업을 하면서 왜 Lambda를 쓰게 됐는지 기록하고자 한다. 
 
