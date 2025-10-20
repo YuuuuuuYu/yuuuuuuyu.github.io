@@ -1,7 +1,7 @@
 ---
 title: 2025 AWS US-East-1 DynamoDB outage
 author: nakji
-date: 2025-10-21 06:04:00 +0900
+date: 2025-10-21 06:20:00 +0900
 tags: [aws, region, outage, dynamodb, dns]
 showToc: true
 TocOpen: true
