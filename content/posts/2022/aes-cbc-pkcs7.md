@@ -6,7 +6,6 @@ tags: [Theory, Security, encrypt, aes, cbc, pkcs7]
 showToc: true
 TocOpen: true
 comments: true
-disableHLJS: false # to disable highlightjs
 disableShare: false
 disableHLJS: false
 hideSummary: false

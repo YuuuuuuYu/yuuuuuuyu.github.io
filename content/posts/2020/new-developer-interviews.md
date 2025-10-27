@@ -6,7 +6,6 @@ tags: [Life, Interview, Web, Developer]
 showToc: true
 TocOpen: true
 comments: true
-disableHLJS: false # to disable highlightjs
 disableShare: false
 disableHLJS: false
 hideSummary: false
