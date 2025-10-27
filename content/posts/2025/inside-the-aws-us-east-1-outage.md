@@ -2,7 +2,7 @@
 title: 2025 AWS US-East-1 outage, DynamoDB down
 author: nakji
 date: 2025-10-21 06:20:00 +0900
-tags: [aws, region, outage, dynamodb, dns]
+tags: [aws, region, outage, dynamodb, dns, ec2, nlb]
 showToc: true
 TocOpen: true
 comments: true
@@ -128,9 +128,28 @@ We are pursuing further mitigation steps to recover Lambda’s polling delays fo
 
 > **큰 힘에는 큰 책임이 따른다**
 
+## 입장문 나온 이후 요약
+해당 지역 시간 기준 2025년 10월 19일 오후 11시 48분부터 10월 20일 오후 2시 20분까지 경과했다. 장애 원인은 **DynamoDB의 DNS 관리 시스템의 잠재적 Race Condition** 때문에 해당 지역 엔드포인트(dynamodb.us-east-1.amazonaws.com)에 대한 **잘못된 빈 DNS 레코드가 발생**하여 자동화가 복구되지 못했다.
+
+여기에는 **`DNS Planner`**, **`DNS Enactor`** 라는 두 구성 요소가 DynamoDB의 자동 DNS 관리 아키텍처 내에 존재한다. 간단하게 `Planner`는 plan을 생성하고, `Enactor`는 해당 plan을 내부 DNS 서비스에 적용하는 역할을 한다. 그런데 `Enactor`는 예상보다 적용되는 시간이 지연되었고, `Planner`는 계속 plan을 생성했다. 이 과정에서 다른 Enactor는 새로운 plan을 적용한 뒤, "이전 plan은 더 이상 유효하지 않다"는 이유로 클린 작업을 수행했다. 결국 지연된 `Enactor`가 뒤늦게 작업을 마치면서 (older) plan을 적용해버리고, 이전 plan은 클린된 상태여서 DNS 레코드가 빈(empty) 상태로 남는 상황이 발생하게 된다.
+> DynamoDB의 리전 엔드포인트(e.g. dynamodb.us-east-1.amazonaws.com)에 대한 IP 주소 레코드가 모두 제거됨
+
+DynamoDB에 접근할 수 없게 되면서 그 데이터 저장소나 상태 저장으로 사용하는 AWS 시스템들이 정상적으로 작동하지 않았다. 대표적으로 NLB의 헬스 체크 실패가 반복되며, `Connection errors`나 `지연`이 증가했다.
+
+향후 대책으로 언급한 것은 위에서 말한 **`DNS Planner`**, **`DNS Enactor`** 자동화 기능을 일시적으로 비활성화하고, 새로운 plan이 이전 plan보다 최신인지 체크하는 로직 등 자동화 DNS 관리 시스템의 설계 및 검증 메커니즘을 강화한다고 한다. **`NLB`** 는 헬스 체크로 AZ 장애가 발생하면 단일 NLB가 제거할 수 있는 용량을 제한하는 속도 제어 메커니즘을 추가한다고 한다. **`EC2`** 는 throttling 메커니즘을 개선하여 대기열의 크기에 따라 들어오는 작업의 속도를 제한시킨다고 한다.
+
+### 공식 입장문
+> ... The root cause of this issue was a latent race condition in the DynamoDB DNS management system that resulted in an incorrect empty DNS record for the service’s regional endpoint (dynamodb.us-east-1.amazonaws.com) that the automation failed to repair.
+
+> ... First, the DNS Planner continued to run and produced many newer generations of plans. Second, one of the other DNS Enactors then began applying one of the newer plans and rapidly progressed through all of the endpoints. The timing of these events triggered the latent race condition.
+
+> ... We are making several changes as a result of this operational event. We have already disabled the DynamoDB DNS Planner and the DNS Enactor automation worldwide. In advance of re-enabling this automation, we will fix the race condition scenario and add additional protections to prevent the application of incorrect DNS plans. For NLB, we are adding a velocity control mechanism to limit the capacity a single NLB can remove when health check failures cause AZ failover. For EC2, we are building an additional test suite to augment our existing scale testing, which will exercise the DWFM recovery workflow to identify any future regressions. We will improve the throttling mechanism in our EC2 data propagation systems to rate limit incoming work based on the size of the waiting queue to protect the service during periods of high load.
+
+
 ## 참고 자료
 [Thomaseccel](https://www.thomaseccel.com/blogs/news/aws-amazon-web-services-major-outage)  
-[AWS Health](https://health.aws.amazon.com/health/status)   
+[AWS Health](https://health.aws.amazon.com/health/status?eventID=arn:aws:health:us-east-1::event/MULTIPLE_SERVICES/AWS_MULTIPLE_SERVICES_OPERATIONAL_ISSUE/AWS_MULTIPLE_SERVICES_OPERATIONAL_ISSUE_BA540_514A652BE1A)   
+[Outage Summary](https://aws.amazon.com/ko/message/101925/)   
 [Reuters](https://www.reuters.com/business/retail-consumer/amazon-cloud-outage-online-services-hit-recovery-uneven-2025-10-20/)     
 [Reddit](https://www.reddit.com/r/aws/comments/1obeozt/how_tf_did_aws_mess_up_so_bad_that_the_entire/)    
 [Namuwiki](https://namu.wiki/w/%EC%95%84%EB%A7%88%EC%A1%B4%20%EC%9B%B9%20%EC%84%9C%EB%B9%84%EC%8A%A4#s-6.1.2)
