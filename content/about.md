@@ -5,14 +5,14 @@ url: "/about"
 summary: "about"
 ---
 
-# 🤔 Who Am I?
+## 🤔 Who Am I?
 ---
     저는 문제를 깊이 생각하고 해결책을 찾는 것을 즐깁니다.
 
     같은 문제를 다양한 관점에서 바라보고    
     제 사고가 확장되는 과정에서 큰 성취감을 느낍니다.
 
-# ✏️ Skill
+## ✏️ Skill
 ---
 ### **Languages**
 ![badge](https://img.shields.io/badge/Java-black?style=flat&logo=openjdk&logoColor=white)
@@ -47,3 +47,6 @@ summary: "about"
 
 ![badge](https://img.shields.io/badge/GCP-4285F4?style=flat&logo=googlecloud&logoColor=white)
 ![badge](https://img.shields.io/badge/Bigquery-669DF6?style=flat&logo=googlebigquery&logoColor=white)
+
+## ➰ Contributions
+---
