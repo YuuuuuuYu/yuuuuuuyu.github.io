@@ -50,3 +50,5 @@ summary: "about"
 
 ## ➰ Contributions
 ---
+### <a href="https://github.com/AloisSeckar/demos-java" target="_blank">demos-java</a>
+<a href="https://github.com/AloisSeckar/demos-java/pull/348" target="_blank">#348</a>
