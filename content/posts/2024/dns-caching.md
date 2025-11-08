@@ -21,10 +21,10 @@ UseHugoToc: true
 - DNS 쿼리를 조기에 확인하여 로딩 시간이 향상되고, 대역폭/CPU 소비가 줄어듬
 
 **- DNS 캐시되지 않은 응답**
-![dns3](/images/2024/dns3.svg)
+![](/images/2024/dns3.svg)
 
 **- DNS 캐시된 응답**
-![dns4](/images/2024/dns4.svg)
+![](/images/2024/dns4.svg)
 
 ### **1. 브라우저 캐싱**
 : 최신 브라우저는 기본적으로 정해진 시간 동안 DNS 레코드를 캐시하도록 설계되어있다. 웹 브라우저와 가까울수록 캐시를 확인하고 IP 주소에 대한 요청을 처리하는 단계가 적어지기 때문이다.   
@@ -35,7 +35,7 @@ UseHugoToc: true
 ### **2. OS 수준 캐싱**
 : 운영체제마다 DNS 캐싱 방식과 관리하는 방법이 다르지만 공통으로 DNS Resolver로 쿼리가 요청되기 전에 요청을 받는다. `Stub Resolver`라고 불리우며 DNS Resolver의 하위 집합이라고 보면 된다. DNS Resolver와의 차이점은 스스로 재귀를 수행하지 않고 캐시를 공동으로 공유되기 때문에 DNS Resolver에 캐시가 있다면 더 빨리 IP 주소를 확인하여 반환한다.
 
-![stubResolver](https://www.nslookup.io/img/how-does-dns-resolver-work.3f1ba36a.jpg)
+![](https://www.nslookup.io/img/how-does-dns-resolver-work.3f1ba36a.jpg)
 
 > [DNS 조회 과정](/posts/2024/2024-11-12-dns/#dns-%EC%A1%B0%ED%9A%8C-%EA%B3%BC%EC%A0%95)에서 DNS Resolver 앞에 Stub Resolver가 추가됐다고 보면 된다.
 
@@ -52,7 +52,7 @@ UseHugoToc: true
 ## **DNS 레코드**
 : 도메인 이름과 관련된 정보를 저장하고 제공한다. 각 레코드는 특정한 목적과 기능을 가지며, 인터넷 상에서 도메인 이름 해석, 이메일 라우팅, 서비스 위치 지정 등 여러 가지 작업을 지원한다.
 
-![dns-record](/images/2024/dns5.png)
+![](/images/2024/dns5.png)
 
 - **A**     
 : 웹사이트 접속 시 도메인 이름을 IP 주소로 해석하여 연결
@@ -98,7 +98,7 @@ UseHugoToc: true
 : DNS 캐시에 잘못된 정보를 입력하여 DNS 쿼리가 잘못된 응답을 반환하고, 사용자가 잘못된 사이트로 연결되도록 하는 행위. 공격자는 DNS 네임 서버를 가장하여 DNS Resolver에 요청을 보낸 후, 해당 쿼리를 처리할 때 응답을 위조하여 DNS 캐시를 감염시킬 수 있다. 이는 DNS 서버가 UDP를 사용하고 현재 DNS 정보에 대한 확인이 없기 때문이다.
 
 - **DNS 캐시 악성 침입 프로세스**
-![urlimage1](https://www.cloudflare.com/img/learning/dns/dns-cache-poisoning/dns-cache-poisoning-attack.svg)
+![](https://www.cloudflare.com/img/learning/dns/dns-cache-poisoning/dns-cache-poisoning-attack.svg)
 
 1. `example.com` 도메인에 대한 IP 요청
 2. 권한 있는 네임 서버에 `example.com`에 대한 IP 요청
@@ -106,7 +106,7 @@ UseHugoToc: true
   3-1. (3이 실행될 때 공격자가) `example.com`의 IP가 `192.0.0.17`라는 것을 반환  
 
 - **악성 침입된 DNS 캐시**
-![urlimage2](https://www.cloudflare.com/img/learning/dns/dns-cache-poisoning/dns-cache-poisoned.svg)
+![](https://www.cloudflare.com/img/learning/dns/dns-cache-poisoning/dns-cache-poisoned.svg)
 
 > `example.com(192.0.0.16)`을 원했지만 공격자에 의해 example.com를 접근할 때 `192.0.0.17`로 이동하게 된다.
 

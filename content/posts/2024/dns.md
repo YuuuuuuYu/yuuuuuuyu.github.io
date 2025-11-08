@@ -27,10 +27,10 @@ UseHugoToc: true
 - **분산 관리**: 전 세계적으로 분산된 서버를 통해 빠르고 안정적인 이름 해석을 제공
 
 ## **주요 DNS 목록**
-![dnsList](https://yuuuuuuyu.github.io/images/2024/dns1.png)
+![](/images/2024/dns1.png)
 
 ## **DNS 서버 유형**
-![dnsServer](https://yuuuuuuyu.github.io/images/2024/dns0.png)
+![](/images/2024/dns0.png)
 
 사용자 검색을 IP 주소로 변환하는 과정에는 네 가지 유형의 DNS 서버가 관여한다. 
 
@@ -60,7 +60,7 @@ UseHugoToc: true
 - 올바른 IP 주소를 재귀 DNS 서버에 반환하거나, 정보가 없을 경우 오류 메시지 전달
 
 ## **DNS 조회 과정**
-![dnsLookupCloudflare](https://yuuuuuuyu.github.io/images/2024/dns2.png)
+![](/images/2024/dns2.png)
 
 위 그림은 `example.com`을 입력했을 때 DNS를 조회하는 단계를 나타낸 것이다.
 

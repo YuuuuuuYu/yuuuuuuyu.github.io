@@ -20,7 +20,7 @@ UseHugoToc: true
 : HTTP의 보안이 강화된 버전이다. 소켓 통신에서 일반 텍스트를 이용하는 대신에, SSL이나 TLS 프로토콜을 통해 세션 데이터를 암호화한다.
 
 ### 1. HTTP와의 차이점
-![httpAndHttps](https://yuuuuuuyu.github.io/images/2024/https0.png)
+![](/images/2024/https0.png)
 
 요약하면 HTTPS는 다음과 같은 차이점이 있다.
 - **보안성**: 보안 인증서를 통해 데이터 전송 시 암호화를 제공하여 보안을 강화
@@ -28,7 +28,7 @@ UseHugoToc: true
 - **신뢰성**: 검색 엔진에서 우선순위를 우대받으며, 사용자에게 더 신뢰감을 보장
 
 ### 2. 동작 원리
-![httpsProcess](https://yuuuuuuyu.github.io/images/2024/https1.png)
+![](/images/2024/https1.png)
 
 **1) URL 파싱 및 DNS 조회**
 : 브라우저는 URL을 확인하고 DNS를 통해 도메인을 IP 주소로 변환하여 전달한다.
@@ -93,7 +93,7 @@ Host: www.example.com
 ## TLS (Transport Layer Security)
 : 위와 같은 문제로 TLS가 등장했으며, SSL의 취약점을 개선하고 표준으로 자리잡게 되었다.  
 다음은 TLS의 버전별 개선사항이다.
-![tlsVersion](https://yuuuuuuyu.github.io/images/2024/https2.png)
+![](/images/2024/https2.png)
 
 - **TLS 1.0**
     - SSL 3.0을 기반으로 개발된 초기 버전

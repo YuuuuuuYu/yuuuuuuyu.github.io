@@ -27,7 +27,7 @@ UseHugoToc: true
 ## **중간 수정 (1차 MVP ~ 2차 MVP)**
 오히려 S3 스토리지를 Cloudflare의 R2 스토리지로 변경해야했다. 왜냐하면 AWS Lambda에서 제공하는 무료 한도량이 우리 서비스에서 발생할 수 있는 읽기/쓰기 횟수보다 높았기 때문이다. 그리고 R2 SDK가 AWS S3 기반이기 때문에 호환성도 좋았다.
 
-![s2 vs r2](https://yuuuuuuyu.github.io/images/2025/photopic-aws-lambda.png)
+![](/images/2025/photopic-aws-lambda.png)
 
 ## **최종 설계 (2차 MVP ~ 고도화)**
 아이폰은 기본 확장자가 Heic, Heif 확장자를 쓰기 때문에 아이폰 유저를 고려해서라도 확장자를 추가해야했다. 하지만 자바 라이브러리에서 Heic 확장자를 호환해주지 않기 때문에 람다를 사용하여 `heic-convert` 라이브러리를 사용하는 함수를 만들었다

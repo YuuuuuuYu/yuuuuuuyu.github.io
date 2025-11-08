@@ -37,7 +37,7 @@ UseHugoToc: true
 - 아직 운영 서버에는 배포를 하지 않은 상태
 - API의 일일 최대 호출 횟수가 정해져 있어서 추가 보안 설정 후에 배포 예정
 - **구글 검색 화면**
-![](https://yuuuuuuyu.github.io/images/2024/4d4cat1.png)
+![](/images/2024/4d4cat1.png)
 
 
 ## **프로젝트 개선하는 여정**
