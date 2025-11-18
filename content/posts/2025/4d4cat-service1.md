@@ -36,7 +36,7 @@ UseHugoToc: true
 
 여기서 영감을 받아, 저작권 없는 영상이나 음원을 랜덤으로 제공하는 서비스를 구현했다. **`Lorem Picsum`** 처럼 랜덤 이미지 서비스도 계획에 있지만, 다른 곳에서 쉽게 찾아볼 수 없는 차별화된 서비스를 먼저 만들고 싶었다.
 
-![](https://yuuuuuuyu.github.io/images/2025/4d4cat-service1.png)
+![](/images/2025/4d4cat-service1.png)
 
 ### [백엔드](https://github.com/YuuuuuuYu/4d4cat-services?tab=readme-ov-file#%EF%B8%8F-%EA%B8%B0%EC%88%A0-%EC%8A%A4%ED%83%9D)
 ```toml
@@ -71,12 +71,12 @@ Infra: Replit
 
 ### Random
 영상, 음원은 [Pixabay](https://pixabay.com)에서 제공하는 소스로 저작권 없고 자유롭게 사용하도록 제공한다. 기본적으로 이미지가 더 많기 때문에 랜덤 이미지 노출도 적용할 예정이다.
-![](https://yuuuuuuyu.github.io/images/2025/4d4cat-service1-video.png)
-![](https://yuuuuuuyu.github.io/images/2025/4d4cat-service1-music.png)
+![](/images/2025/4d4cat-service1-video.png)
+![](/images/2025/4d4cat-service1-music.png)
 
 ### Last Message
 추가로 **`Last Message`** 라는 서비스를 만들었다. 이 서비스는 사이트에 접속한 사용자가 정해진 길이 내에서 원하는 메시지를 남길 수 있는 기능이다. 어떤 내용을 남길지는 온전히 사용자의 자유에 맡겨서 비속어든 칭찬이든 상관없이, 마지막에는 어떤 메시지가 남게 될지 궁금해서 만들게 되었다.
-![](https://yuuuuuuyu.github.io/images/2025/4d4cat-service1-lastmessage.png)
+![](/images/2025/4d4cat-service1-lastmessage.png)
 
 ### Keyword
 다음으로 **`키워드 통계`** 기능을 구현 중이다. 현재는 **`Google Trends`** 데이터를 실시간으로 가져와 보여주는 방식인데 추후 실시간 순위와 일별 키워드 순위를 분리하고, 클릭 이벤트를 통해 더 다양한 정보를 제공하는 것이 목표이다.

@@ -26,12 +26,12 @@ UseHugoToc: true
 
 ---
 
-![httpRequest](https://yuuuuuuyu.github.io/images/2024/http0.png)
+![](/images/2024/http0.png)
 
 ### 1. HTTP 버전 유형 
 HTTP 버전은 시간이 지나면서 여러 버전으로 업데이트되어 왔습니다.    
 간단히 요약하면 아래와 같은데 자세한 내용은 RFC 문서를 참고하시기 바랍니다. <br>    
-![httpVersion](https://yuuuuuuyu.github.io/images/2024/http1.png)
+![](/images/2024/http1.png)
 
 - **HTTP/1.0**
     - 초기 HTTP는 각 요청마다 새로운 TCP 연결을 생성하고 종료했습니다.
@@ -51,7 +51,7 @@ HTTP 버전은 시간이 지나면서 여러 버전으로 업데이트되어 왔
 ### 2. 요청 메서드
 서버에게 요청하는 행동이나 작업을 나타냅니다.   
 요약을 하면 아래와 같은데 여기서는 일부분만 다뤄보겠습니다.<br>  
-![httpMethod](https://yuuuuuuyu.github.io/images/2024/http2.png)
+![](/images/2024/http2.png)
 
 - **GET**
     - 특정 리소스의 표시를 요청하고, 데이터를 받기만 합니다.
@@ -120,7 +120,7 @@ HTTP 버전은 시간이 지나면서 여러 버전으로 업데이트되어 왔
 
 ---
 
-![HTTP 응답](https://yuuuuuuyu.github.io/images/2024/http3.png)
+![](/images/2024/http3.png)
 
 ### 1. 응답 코드
 클라이언트가 서버에 요청을 보냈을 때, 서버는 응답코드와 함께 응답합니다.

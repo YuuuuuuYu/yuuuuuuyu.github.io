@@ -116,7 +116,7 @@ public class WebClientExample {
 ```
 
 ### **비교**
-![DifferenceHttpClient](https://yuuuuuuyu.github.io/images/2025/httpclient1.png?raw=true)
+![](/images/2025/httpclient1.png)
 
 
 ## **출처**

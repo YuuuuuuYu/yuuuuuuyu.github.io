@@ -56,7 +56,7 @@ AWS 장애 관련 내용을 찾다가 레딧에서 하나 글을 보게 되었�
 어찌보면 `US-EAST-1`가 기본 리전이어서 점유율이 가장 높은데 과거에도 피해를 입은 사람들이 대부분인 것 같다.
 
 ## [영향 받은 서비스](https://www.linkedin.com/posts/thomaseccel_aws-amazonwebservices-activity-7385962329718276096-XyGV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC4kePoBhpEwyaexPI2o6yFnLybpfRibMWU)
-![image](https://media.licdn.com/dms/image/v2/D4D22AQEfjCmP5NmoeA/feedshare-shrink_1280/B4DZoA1mMMJIAs-/0/1760950642673?e=1762387200&v=beta&t=e7lmbLWz3ZwYN0h6c_WowJ-Ypo_6Na1OXKkhVOSgPcg)
+![image](/images/2025/aws-us-east-1-outage.png)
 
 ### *나무위키에 올라온 서비스 목록은 다음과 같다*
 <details>
