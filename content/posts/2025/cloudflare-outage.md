@@ -23,6 +23,7 @@ AWS 장애 사태가 약 한 달이 되어가는데 Cloudflare에서도 장애�
 ## 장애 원인
 ~포스팅 작성 시간 기준으로는 아직 명확한 원인이 나오지 않았다. Cloudflare 측은 문제가 발견되어 수정 작업을 진행 중인데, 아마도 대부분의 서비스가 안정화됐을 때 다시 보고해 주지 않을까 싶다.~    
 
+![outage](https://cf-assets.www.cloudflare.com/zkvhlag99gkb/3ony9XsTIteX8DNEFJDddJ/7da2edd5abca755e9088002a0f5d1758/BLOG-3079_2.png)
 내부 데이터베이스 시스템 중 하나의 권한 변경이 원인이었고, 이에 따라 해당 DB가 ClickHouse 클러스터에서 반복적인 쿼리를 통해 ***feature file***을 생성하는 과정에서 중복된 항목이 다수 출력되었다. 
 
 최근 발생한 [AWS 장애](/posts/2025/inside-the-aws-us-east-1-outage/)처럼 외부의 공격이나 악의적인 활동으로 인한 것은 아니라고 한다. 해당 파일은 봇 관리 시스템이 사용하는 파일이며, 출력 항목이 갑작스럽게 두 배로 늘어난 뒤 네트워크를 구성하는 모든 서비스로 전파되었다. 해당 파일을 참조해서 트래픽을 라우팅하거나 봇 위협을 판단하는 소프트웨어에는 해당 파일 크기 제한이 있었고, 이 수치를 넘자 장애가 발생했다.
@@ -40,8 +41,18 @@ AWS 장애 사태가 약 한 달이 되어가는데 Cloudflare에서도 장애�
 ### Cloudflare Blog
 > The issue was not caused, directly or indirectly, by a cyber attack or malicious activity of any kind. Instead, it was triggered by a change to one of our database systems' permissions which caused the database to output multiple entries into a “feature file” used by our Bot Management system. That feature file, in turn, doubled in size. The larger-than-expected feature file was then propagated to all the machines that make up our network.
 
+> The software running on these machines to route traffic across our network reads this feature file to keep our Bot Management system up to date with ever changing threats. The software had a limit on the size of the feature file that was below its doubled size. That caused the software to fail.
+
+> The explanation was that the file was being generated every five minutes by a query running on a ClickHouse database cluster, which was being gradually updated to improve permissions management. Bad data was only generated if the query ran on a part of the cluster which had been updated. As a result, every five minutes there was a chance of either a good or a bad set of configuration files being generated and rapidly propagated across the network.
+
+> This fluctuation made it unclear what was happening as the entire system would recover and then fail again as sometimes good, sometimes bad configuration files were distributed to our network. Initially, this led us to believe this might be caused by an attack. Eventually, every ClickHouse node was generating the bad configuration file and the fluctuation stabilized in the failing state.
+
 ### Cloudflare Status
-> Update
+>Resolved   
+This incident has been resolved.    
+> Nov 18, 2025 - 19:28 UTC
+
+> Update    
 Cloudflare services are currently operating normally. We are no longer observing elevated errors or latency across the network.     
 > Our engineering teams continue to closely monitor the platform and perform a deeper investigation into the earlier disruption, but no configuration changes are being made at this time.      
 > At this point, it is considered safe to re-enable any Cloudflare services that were temporarily disabled during the incident. We will provide a final update once our investigation is complete.    
@@ -63,6 +74,10 @@ Cloudflare services are currently operating normally. We are no longer observing
 먼저 잘못된 파일을 만들어내는 자동 쿼리 실행을 중단하고, 네트워크 전체로 퍼지지 않도록 차단했다. 그 후, 이전에 검증된 정상적인 파일을 직접 `Distribution Queue`에 넣고 강제 재시작을 했다.
 
 지속적인 모니터링 결과, 14:30부터 에러가 감소하며 정상화되기 시작했다.
+
+> Errors continued until the underlying issue was identified and resolved starting at 14:30. We solved the problem by stopping the generation and propagation of the bad feature file and manually inserting a known good file into the feature file distribution queue. And then forcing a restart of our core proxy.
+
+> The remaining long tail in the chart above is our team restarting remaining services that had entered a bad state, with 5xx error code volume returning to normal at 17:06.
 
 ### 관련 내부 서비스
 - Core CDN
