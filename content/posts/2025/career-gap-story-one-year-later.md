@@ -68,7 +68,7 @@ UseHugoToc: true
 
 여러 부분으로 부딪히고 의견 조율하기까지 서로 양보하는게 많았지만 결과적으로 잘 마무리 되었다. 특히 이 활동을 통해서 프로젝트, 기술적인 면에서 많은 것을 알게 되니 정말 좋은 경험이었다. 회사에서 보지 못했던 아키텍처, 컨벤션, 커뮤니케이션 등을 알게 됐고 내가 부족한 부분이 어떤 것인지 인지하고 공부하게 되는 계기였다.
 > - <a href="https://4d4cat.site/posts/2025/photopic/" target="_blank">스위프 프로젝트 후기</a>   
-> - <a href="https://github.com/YuuuuuuYu/photopic" target="_blank">Github/PhotoPic</a>
+> - <a href="https://github.com/SWYP-team-2th/server" target="_blank">Github/PhotoPic</a>
 
 ## 4월 ~ 7월, 최신 트렌드를 따라가려면
 ### Just do it
