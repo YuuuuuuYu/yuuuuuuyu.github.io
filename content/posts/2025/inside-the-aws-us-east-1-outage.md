@@ -1,5 +1,5 @@
 ---
-title: 2025 AWS US-East-1 outage, DynamoDB down
+title: "2025 AWS US-East-1 region outage: DynamoDB down"
 author: nakji
 date: 2025-10-21 06:20:00 +0900
 tags: [aws, region, outage, dynamodb, dns, ec2, nlb]

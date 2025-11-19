@@ -1,8 +1,8 @@
 ---
-title: Cloudflare outage
+title: "Cloudflare outage: What went wrong?"
 author: nakji
 date: 2025-11-18 23:31:00 +0900
-tags: [cloudflare, outage, worker, turnstile]
+tags: [cloudflare, outage, cdn, worker, turnstile]
 showToc: true
 TocOpen: true
 comments: true
