@@ -1,5 +1,5 @@
 ---
-title: "쿠팡 개인정보 유출 사건: 3,370만 개 계정 정보 노출"
+title: "쿠팡 3,370만 개 넘는 계정 개인정보 유출, 누가 그랬을까?"
 author: nakji
 date: 2025-11-29 18:14:00 +0900
 tags: [coupang, data, breach, 쿠팡, 개인정보, 유출]
@@ -39,7 +39,9 @@ UseHugoToc: true
 </details>
 
 ## 주요 원인
-액세스 토큰을 통한 비인가 접속 추정
+**'액세스 토큰을 통한 비인가 접속'** 으로 추정되는데, 정확한 것은 결과가 나와야 알 것 같다.
+
+하지만, 그 이후에 나오는 속보에 의하면 ***중국 국적의 전 쿠팡 직원***의 소행이라고 다시 추정되고 있다. 왜냐하면 해당 직원은 사건 발생 직후 한국을 떠나 중국으로 귀국했으며, 이미 퇴사 처리가 됐다고 한다.
 
 ### 노출 정보
 - 이름
@@ -55,3 +57,4 @@ UseHugoToc: true
 ## 참고자료
 [쿠팡 FAQ](https://mc.coupang.com/ssr/desktop/contact/notice)   
 [조선일보](https://www.chosun.com/economy/2025/11/29/ZQ5T77Q77JCYPGUO67QORGMLAA/)   
+[머니투데이](https://www.mt.co.kr/living/2025/11/29/2025112920282541860)
