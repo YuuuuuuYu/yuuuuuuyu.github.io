@@ -30,37 +30,6 @@
                 </a>
             </div>
         </div>
-
-        <!-- AI Vibe Coding Section -->
-        <div class="service-section vibe-section">
-            <h4 class="section-title">🤖 AI Vibe Coding</h4>
-            <div class="vibe-coding-grid">
-                <a href="https://facial-analysis.4d4cat.site?utm_source=4d4cat_blog&utm_medium=referral&utm_campaign=blog_redirect" target="_blank" rel="noopener" class="service-card vibe-card">
-                    <h5 class="service-title">
-                        매력도 분석
-                        <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" height="10" width="10">
-                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                            <path d="M15 3h6v6"></path>
-                            <path d="M10 14L21 3"></path>
-                        </svg>
-                    </h5>
-                    <p class="service-description">AI가 분석해주는 매력도</p>
-                </a>
-                <a href="https://multi-translate.4d4cat.site?utm_source=4d4cat_blog&utm_medium=referral&utm_campaign=blog_redirect" target="_blank" rel="noopener" class="service-card vibe-card">
-                    <h5 class="service-title">
-                        Multi-Translate
-                        <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" height="10" width="10">
-                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                            <path d="M15 3h6v6"></path>
-                            <path d="M10 14L21 3"></path>
-                        </svg>
-                    </h5>
-                    <p class="service-description">여러 언어 동시 번역</p>
-                </a>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -188,41 +157,6 @@
     text-overflow: ellipsis;
 }
 
-.vibe-card {
-    margin: 0;
-    height: auto;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-    border: 2px solid rgba(102, 126, 234, 0.2);
-    white-space: nowrap;
-    width: auto;
-    min-width: fit-content;
-}
-
-.vibe-card:hover {
-    border-color: rgba(102, 126, 234, 0.4);
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
-}
-
-.vibe-coding-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.2rem;
-    max-width: 100%;
-}
-
-/* Ensure maximum 2 columns for vibe coding grid */
-@media (min-width: 500px) {
-    .vibe-coding-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 499px) {
-    .vibe-coding-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 @media (max-width: 768px) {
     .services-container {
         flex-direction: column;
@@ -235,11 +169,6 @@
         border-bottom: 1px solid var(--border);
         padding-right: 0;
         padding-bottom: 1.5rem;
-    }
-    
-    .vibe-section {
-        padding-left: 0;
-        padding-top: 1.5rem;
     }
     
     .services-feed {
