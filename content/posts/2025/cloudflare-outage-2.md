@@ -65,7 +65,7 @@ Customers using the Dashboard / Cloudflare APIs are impacted as requests might f
 ### React Server Components가 뭐길래?
 12월 3일 React 팀에서 인증 없이 원격 코드 실행(Remote Code Execution, RCE)이 가능한 심각한 취약점을 공개했다. 해당 취약점을 요약하면 RSC에서 사용하는 “Flight” 프로토콜의 직렬화/역직렬화 처리 로직이 안전하지 않다. 공격자가 악의적으로 조작된 HTTP 요청(payload)을 보내면, 서버에서 이 데이터를 역직렬화하는 과정에서 임의의 코드가 실행될 수 있다. 
 
-해당 기능이 실제로 `Server Function endpoint`를 직접 구현하지 않았더라도, 단순히 RSC를 지원하는 설정만으로도 취약 상태가 될 수 있다는 것이다. 이 취약점들의 공식 식별자는 다음과 같다.
+해당 기능이 실제로 `Server Function endpoint`를 직접 구현하지 않았더라도, 단순히 RSC를 지원하는 설정만으로 취약 상태가 될 수 있다는 것이다. 이 취약점들의 공식 식별자는 다음과 같다.
 > CVE-2025-55182    
 > CVE-2025-66478
 
