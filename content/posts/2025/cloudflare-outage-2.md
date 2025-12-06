@@ -40,7 +40,7 @@ Cloudflare is investigating issues with Cloudflare Dashboard and related APIs.
 Customers using the Dashboard / Cloudflare APIs are impacted as requests might fail and/or errors may be displayed.     
 > Dec 05, 2025 - 08:56 UTC
 
-구체적으로 보안 취약점에 대응하기 위해 기본 버퍼 크기를 128KB에서 1MB로 늘려서 점진적으로 배포하고 있었다. 그런데 내부 WAF 테스트 도구가 이 버퍼 크기 변경을 지원하지 않아서 테스트 도구를 비활성화시켰는데, 이 변경이 즉각적으로 전 세계에 전파되었다. 
+보안 취약점에 대응하기 위해 기본 버퍼 크기를 128KB에서 1MB로 늘려서 점진적으로 배포하고 있었다. 그런데 내부 WAF 테스트 도구가 이 버퍼 크기 변경을 지원하지 않아서 테스트 도구를 비활성화시켰는데, 이 변경이 즉각적으로 전 세계에 전파되었다. 
 
 일부 **FL1 Proxy** 라고 불리는 구형 프록시에서는 테스트 도구를 비활성화시키는 것이 오류를 유발하여 HTTP 500 에러를 발생시키기도 했다.
 
@@ -61,7 +61,6 @@ Customers using the Dashboard / Cloudflare APIs are impacted as requests might f
 
 > As soon as the change propagated to our network, code execution in our FL1 proxy reached a bug in our rules module which led to the following Lua exception:
 
-
 ### React Server Components가 뭐길래?
 12월 3일 React 팀에서 인증 없이 원격 코드 실행(Remote Code Execution, RCE)이 가능한 심각한 취약점을 공개했다. 해당 취약점을 요약하면 RSC에서 사용하는 “Flight” 프로토콜의 직렬화/역직렬화 처리 로직이 안전하지 않다. 공격자가 악의적으로 조작된 HTTP 요청(payload)을 보내면, 서버에서 이 데이터를 역직렬화하는 과정에서 임의의 코드가 실행될 수 있다. 
 
@@ -75,7 +74,9 @@ Customers using the Dashboard / Cloudflare APIs are impacted as requests might f
 > [티스토리](https://gomguk.tistory.com/306)
 
 ## 조치 과정
-빠르게 감지한만큼 이전 설정으로 롤백을 했다. 변경하려고 했던 부분이 완료되지 못한 것 같은데 대신 내부 시스템을 정비한다고 한다.
+빠르게 감지한만큼 이전 설정으로 롤백을 했다. 
+
+변경하려고 했던 부분이 완료되지 못한 것 같은데 대신 내부 시스템을 정비한다고 한다.
 - **점진적 롤아웃, 빠른 롤백 기능 강화**
 - **간소화된 비상 조치 기능**   
 : 추가 장애가 발생하더라도 중요 작업을 계속 수행하도록 보장
@@ -97,14 +98,13 @@ Customers using the Dashboard / Cloudflare APIs are impacted as requests might f
 Shopify, Zoom 등
 
 ## 마무리
-역시나 이번 사태에 대해 레딧에도 글이 하나 올라왔는데 거기서 괜찮은 사이트를 알게 됐다. 11월 사태에 비해 엄청 빨리 해결됐다고 생각했는데 클라우드플레어에서도 이전 사태가 발생한지 얼마 안됐고, 우선은 서비스 안정화가 우선이다보니 롤백을 바로 결정한 것 같다.
-
-나도 이전 팀에 있었을 때, 설정 몇개 바꾸는 것으로 서비스에 문제가 생길까봐 백업을 준비한 적이 있는데 이 분야에 있는 사람이라면 한 번쯤 겪는 상황인 것 같다.
-
+역시나 이번 사태에 대해 레딧에도 글이 하나 올라왔는데 거기서 괜찮은 사이트를 알게 됐다. 
 > [레딧](https://www.reddit.com/r/CloudFlare/comments/1peq60c/cloudflare_down_again/)   
 > [다운 디텍터](https://downdetector.com)
 
+11월 사태에 비해 엄청 빨리 해결됐다고 생각했는데 클라우드플레어에서도 이전 사태가 발생한지 얼마 안됐고, 우선은 서비스 안정화가 우선이다보니 롤백을 바로 결정한 것 같다. 나도 이전 팀에 있었을 때, 설정 몇개 바꾸는 것으로 서비스에 문제가 생길까봐 백업을 준비한 적이 있는데 이 분야에 있는 사람이라면 한 번쯤 겪는 상황인 것 같다.
+
 ## 참고자료
-[CloudflareBlog](https://blog.cloudflare.com/5-december-2025-outage/)
+[CloudflareBlog](https://blog.cloudflare.com/5-december-2025-outage/)   
 [CloudflareStatus](https://www.cloudflarestatus.com/incidents/lfrm31y6sw9q)     
 ChatGPT
