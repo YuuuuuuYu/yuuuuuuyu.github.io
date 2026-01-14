@@ -48,6 +48,9 @@ summary: "about"
 ![badge](https://img.shields.io/badge/GCP-4285F4?style=flat&logo=googlecloud&logoColor=white)
 ![badge](https://img.shields.io/badge/Bigquery-669DF6?style=flat&logo=googlebigquery&logoColor=white)
 
+### **Algorithm Stats**
+![LeetCode Stats](https://leetcard.jacoblin.cool/yuuuuuuyu?theme=nord&font=Saira&ext=heatmap)
+
 ## ➰ Contributions
 ---
 ### <a href="https://github.com/AloisSeckar/demos-java" target="_blank">demos-java</a>
