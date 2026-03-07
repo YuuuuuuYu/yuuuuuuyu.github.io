@@ -1,7 +1,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-{{- if hugo.IsProduction | or (eq site.Params.env "production") | and (ne .Params.robotsNoIndex true) }}
+{{- $is_tag := or (eq .Kind "taxonomy") (eq .Kind "term") -}}
+{{- $is_prod := or (hugo.IsProduction) (eq site.Params.env "production") -}}
+
+{{- if and $is_prod (not .Params.robotsNoIndex) (not $is_tag) }}
 <meta name="robots" content="index, follow">
 {{- else }}
 <meta name="robots" content="noindex, nofollow">
