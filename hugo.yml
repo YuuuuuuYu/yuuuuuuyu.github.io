@@ -33,7 +33,7 @@ outputs:
 
 services:
   rss:
-    limit: 20
+    limit: 10
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
