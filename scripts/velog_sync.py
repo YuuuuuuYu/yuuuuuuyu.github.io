@@ -9,7 +9,7 @@ import yaml
 import requests
 
 # Base URL for canonical post link
-BASE_URL = "https://4d4cat.com"
+BASE_URL = "https://blog.4d4cat.com"
 
 # Velog GraphQL Endpoint
 VELOG_GRAPHQL_URL = "https://v2.velog.io/graphql"
