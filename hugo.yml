@@ -76,7 +76,7 @@ params:
     google:
       SiteVerificationTag: "-lCuczyAOpXzZTPfYEcNvO__BVz63hso7KMaOgGezmk"
     naver:
-      SiteVerificationTag: "a977ae70c6f89400eeccdb54c1a5f460370619bd"
+      SiteVerificationTag: "7267acc833f29e3a5ae1422d46d2d426f40b6d5b"
 
   socialIcons:
     - name: email
