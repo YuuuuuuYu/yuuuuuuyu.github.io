@@ -1,0 +1,2 @@
+{{- /* Keep HTML robots directives and sitemap eligibility in sync. */ -}}
+{{- return (or .Params.robotsNoIndex (in (slice "taxonomy" "term" "404") .Kind) (in (slice "search" "archives") .Layout)) -}}

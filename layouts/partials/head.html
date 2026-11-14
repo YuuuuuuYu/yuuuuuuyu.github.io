@@ -1,13 +1,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-{{- $is_tag := or (eq .Kind "taxonomy") (eq .Kind "term") -}}
+{{- $noindex := partial "seo/noindex.html" . -}}
 {{- $is_prod := or (hugo.IsProduction) (eq site.Params.env "production") -}}
 
-{{- if and $is_prod (not .Params.robotsNoIndex) (not $is_tag) }}
+{{- if and $is_prod (not $noindex) }}
 <meta name="robots" content="index, follow">
 {{- else }}
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="noindex, follow">
 {{- end }}
 
 {{- /* Title */}}
@@ -25,7 +25,17 @@
     {{- .Summary | default (printf "%s - %s" .Title  site.Title) }}{{- else }}
     {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
 <meta name="author" content="{{ (partial "author.html" . ) }}">
-<link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
+{{- $canonical := .Permalink -}}
+{{- if or .IsHome .IsSection (eq .Kind "term") -}}
+  {{- $paginator := partial "paginator.html" . -}}
+  {{- if gt $paginator.PageNumber 1 -}}
+    {{- $canonical = $paginator.URL | absURL -}}
+  {{- end -}}
+{{- end -}}
+{{- with .Params.canonicalURL -}}
+  {{- $canonical = trim . " " -}}
+{{- end }}
+<link rel="canonical" href="{{ $canonical }}">
 {{- if site.Params.analytics.google.SiteVerificationTag }}
 <meta name="google-site-verification" content="{{ site.Params.analytics.google.SiteVerificationTag }}">
 {{- end }}
