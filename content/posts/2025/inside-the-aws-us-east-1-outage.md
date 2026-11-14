@@ -14,7 +14,7 @@ ShowBreadCrumbs: true
 ShowPostNavLinks: true
 ShowWordCount: true
 UseHugoToc: true
-draft: true
+draft: false
 ---
 
 ## 개요
